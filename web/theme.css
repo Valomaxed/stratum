@@ -63,7 +63,9 @@ input[type=checkbox],input[type=range]{accent-color:#111111}
 .inspector dl>div,.inspector dd{font-size:12px}
 .inspector dt{min-width:0;overflow-wrap:anywhere}
 .inspector>.inspector-note{border-top-color:var(--card-divider);font-size:11px;padding:16px 20px}
+.inspector>.comparison{align-self:stretch;justify-content:space-between}
 .inspector>.comparison strong{font-weight:600;white-space:nowrap}
+.inspector>.inspector-note{align-self:stretch}
 .inspector>.prediction-card{border-color:var(--card-divider);border-radius:6px}
 @media(max-width:420px){.inspector>.panel-heading,.inspector>.member-identity,.inspector>.inspector-note{padding-left:16px;padding-right:16px}.inspector>.inspector-group,.inspector>.comparison{margin-left:16px;margin-right:16px}.inspector>.prediction-card{margin-left:16px;margin-right:16px}.inspector dl>div,.inspector dd{font-size:11px}}
 
