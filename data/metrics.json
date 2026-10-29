@@ -1,0 +1,149 @@
+{
+  "samples": 2400,
+  "seed": 2026,
+  "train_cases": 1800,
+  "test_cases": 600,
+  "channels": 38,
+  "training_severity_range": [
+    0.08,
+    0.65
+  ],
+  "scope": "Known geometry/material/load. Independent synthetic cases; split before augmentation.",
+  "probability_note": "Tree votes are uncalibrated, not engineering reliability probabilities.",
+  "experiments": [
+    {
+      "sensors": 38,
+      "noise_fraction": 0,
+      "missing_fraction": 0,
+      "drift_fraction": 0,
+      "exact_location_accuracy": 0.8416666666666667,
+      "member_f1": 0.9117379435850773,
+      "damaged_severity_mae_pp": 6.3795867343458195,
+      "healthy_false_alarm_rate": 0.0
+    },
+    {
+      "sensors": 38,
+      "noise_fraction": 0.01,
+      "missing_fraction": 0.1,
+      "drift_fraction": 0,
+      "exact_location_accuracy": 0.7066666666666667,
+      "member_f1": 0.8031651829871415,
+      "damaged_severity_mae_pp": 9.905047086098916,
+      "healthy_false_alarm_rate": 0.008695652173913044
+    },
+    {
+      "sensors": 38,
+      "noise_fraction": 0.03,
+      "missing_fraction": 0.2,
+      "drift_fraction": 0.01,
+      "exact_location_accuracy": 0.3933333333333333,
+      "member_f1": 0.48824188129899215,
+      "damaged_severity_mae_pp": 20.08603815837913,
+      "healthy_false_alarm_rate": 0.17391304347826086
+    },
+    {
+      "sensors": 20,
+      "noise_fraction": 0,
+      "missing_fraction": 0,
+      "drift_fraction": 0,
+      "exact_location_accuracy": 0.8383333333333334,
+      "member_f1": 0.9097538742023701,
+      "damaged_severity_mae_pp": 6.6616293573283585,
+      "healthy_false_alarm_rate": 0.0
+    },
+    {
+      "sensors": 20,
+      "noise_fraction": 0.01,
+      "missing_fraction": 0.1,
+      "drift_fraction": 0,
+      "exact_location_accuracy": 0.7216666666666667,
+      "member_f1": 0.823992133726647,
+      "damaged_severity_mae_pp": 9.881335674157425,
+      "healthy_false_alarm_rate": 0.0
+    },
+    {
+      "sensors": 20,
+      "noise_fraction": 0.03,
+      "missing_fraction": 0.2,
+      "drift_fraction": 0.01,
+      "exact_location_accuracy": 0.3616666666666667,
+      "member_f1": 0.4557823129251701,
+      "damaged_severity_mae_pp": 21.165754726174786,
+      "healthy_false_alarm_rate": 0.1826086956521739
+    },
+    {
+      "sensors": 10,
+      "noise_fraction": 0,
+      "missing_fraction": 0,
+      "drift_fraction": 0,
+      "exact_location_accuracy": 0.7416666666666667,
+      "member_f1": 0.8260038240917782,
+      "damaged_severity_mae_pp": 11.79468634772458,
+      "healthy_false_alarm_rate": 0.0
+    },
+    {
+      "sensors": 10,
+      "noise_fraction": 0.01,
+      "missing_fraction": 0.1,
+      "drift_fraction": 0,
+      "exact_location_accuracy": 0.5433333333333333,
+      "member_f1": 0.6445916114790287,
+      "damaged_severity_mae_pp": 16.16667345351112,
+      "healthy_false_alarm_rate": 0.008695652173913044
+    },
+    {
+      "sensors": 10,
+      "noise_fraction": 0.03,
+      "missing_fraction": 0.2,
+      "drift_fraction": 0.01,
+      "exact_location_accuracy": 0.3516666666666667,
+      "member_f1": 0.43660418963616315,
+      "damaged_severity_mae_pp": 23.284507203871403,
+      "healthy_false_alarm_rate": 0.3217391304347826
+    },
+    {
+      "sensors": 5,
+      "noise_fraction": 0,
+      "missing_fraction": 0,
+      "drift_fraction": 0,
+      "exact_location_accuracy": 0.49666666666666665,
+      "member_f1": 0.5747126436781609,
+      "damaged_severity_mae_pp": 19.069180313312447,
+      "healthy_false_alarm_rate": 0.0
+    },
+    {
+      "sensors": 5,
+      "noise_fraction": 0.01,
+      "missing_fraction": 0.1,
+      "drift_fraction": 0,
+      "exact_location_accuracy": 0.39166666666666666,
+      "member_f1": 0.4469135802469136,
+      "damaged_severity_mae_pp": 23.498100041929384,
+      "healthy_false_alarm_rate": 0.043478260869565216
+    },
+    {
+      "sensors": 5,
+      "noise_fraction": 0.03,
+      "missing_fraction": 0.2,
+      "drift_fraction": 0.01,
+      "exact_location_accuracy": 0.245,
+      "member_f1": 0.2838137472283814,
+      "damaged_severity_mae_pp": 27.195016840152075,
+      "healthy_false_alarm_rate": 0.4
+    }
+  ],
+  "observability": {
+    "local_sensitivity_rank": 17,
+    "unknown_member_losses": 21,
+    "note": "One static load pattern is rank deficient even with all channels. An ML prior or sparsity assumption cannot guarantee unique damage identification."
+  },
+  "physics_comparison": {
+    "cases": 40,
+    "sensors": 38,
+    "noise_fraction": 0,
+    "pure_ml_damaged_mae_pp": 7.261882225161111,
+    "physics_refined_damaged_mae_pp": 0.08496881251760367,
+    "optimizer_failures": 0,
+    "note": "Static FEM inverse refinement with an ML prior; not a PINN. Same-model synthetic evaluation."
+  }
+}

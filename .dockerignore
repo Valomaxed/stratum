@@ -1,0 +1,10 @@
+*
+!Dockerfile
+!requirements-lock.txt
+!requirements-hosting.txt
+!twin/
+!twin/**
+!web/
+!web/**
+**/__pycache__/
+**/*.pyc

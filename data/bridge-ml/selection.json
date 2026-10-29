@@ -1,0 +1,55 @@
+{
+  "candidates": [
+    {
+      "threshold": 0.2,
+      "accuracy": 0.9356060606060606,
+      "damaged_location_accuracy": 0.9273504273504274,
+      "healthy_false_alarm_rate": 0.0,
+      "coverage": 1.0,
+      "accuracy_when_accepted": 0.9356060606060606,
+      "damaged_severity_mae_pp": 5.371943851402842,
+      "correct_location_severity_mae_pp": 4.692659166531574
+    },
+    {
+      "threshold": 0.35,
+      "accuracy": 0.9318181818181818,
+      "damaged_location_accuracy": 0.9230769230769231,
+      "healthy_false_alarm_rate": 0.0,
+      "coverage": 0.9943181818181818,
+      "accuracy_when_accepted": 0.9371428571428572,
+      "damaged_severity_mae_pp": 5.3982603075359545,
+      "correct_location_severity_mae_pp": 4.686916417223808
+    },
+    {
+      "threshold": 0.5,
+      "accuracy": 0.8920454545454546,
+      "damaged_location_accuracy": 0.8782051282051282,
+      "healthy_false_alarm_rate": 0.0,
+      "coverage": 0.9261363636363636,
+      "accuracy_when_accepted": 0.9631901840490797,
+      "damaged_severity_mae_pp": 5.84131713838055,
+      "correct_location_severity_mae_pp": 4.697200659767263
+    },
+    {
+      "threshold": 0.65,
+      "accuracy": 0.8390151515151515,
+      "damaged_location_accuracy": 0.8333333333333334,
+      "healthy_false_alarm_rate": 0.0,
+      "coverage": 0.8465909090909091,
+      "accuracy_when_accepted": 0.9910514541387024,
+      "damaged_severity_mae_pp": 6.4386757580649325,
+      "correct_location_severity_mae_pp": 4.6446525096086955
+    }
+  ],
+  "selected": {
+    "threshold": 0.2,
+    "accuracy": 0.9356060606060606,
+    "damaged_location_accuracy": 0.9273504273504274,
+    "healthy_false_alarm_rate": 0.0,
+    "coverage": 1.0,
+    "accuracy_when_accepted": 0.9356060606060606,
+    "damaged_severity_mae_pp": 5.371943851402842,
+    "correct_location_severity_mae_pp": 4.692659166531574
+  },
+  "forest_sha256": "e66534b24a0b8a0773b6d121b5bd0dc1530cfee97e60ad99245d07fda1ec6c10"
+}

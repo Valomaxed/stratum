@@ -1,0 +1,1630 @@
+{
+  "schema_version": 1,
+  "validation_cases": 120,
+  "test_cases": 240,
+  "validation_seed": 31027,
+  "test_seed": 41027,
+  "forest_training_seed": 2026,
+  "frozen_config_sha256": "e8e525d59338a9b6e89c6c22bfd40c0be5f1a9b36b33883b1e29591e0e6e2f53",
+  "selection": {
+    "single": {
+      "candidates": [
+        {
+          "penalty": 0.5,
+          "mean_exact_location_accuracy": 0.4826388888888889,
+          "mean_member_f1": 0.6326506197456364,
+          "mean_healthy_false_alarm_rate": 0.4791666666666666,
+          "mean_damaged_severity_mae_pp": 10.580738230872972
+        },
+        {
+          "penalty": 1.0,
+          "mean_exact_location_accuracy": 0.56875,
+          "mean_member_f1": 0.6688987068133848,
+          "mean_healthy_false_alarm_rate": 0.306547619047619,
+          "mean_damaged_severity_mae_pp": 10.822326543417075
+        },
+        {
+          "penalty": 2.0,
+          "mean_exact_location_accuracy": 0.6708333333333334,
+          "mean_member_f1": 0.7149543455003422,
+          "mean_healthy_false_alarm_rate": 0.05059523809523809,
+          "mean_damaged_severity_mae_pp": 11.305134620853913
+        },
+        {
+          "penalty": 4.0,
+          "mean_exact_location_accuracy": 0.6847222222222222,
+          "mean_member_f1": 0.7304459482704407,
+          "mean_healthy_false_alarm_rate": 0.0,
+          "mean_damaged_severity_mae_pp": 11.982460402277624
+        },
+        {
+          "penalty": 8.0,
+          "mean_exact_location_accuracy": 0.6555555555555556,
+          "mean_member_f1": 0.699352519297381,
+          "mean_healthy_false_alarm_rate": 0.0,
+          "mean_damaged_severity_mae_pp": 13.029120584693695
+        }
+      ],
+      "selected": {
+        "penalty": 4.0,
+        "mean_exact_location_accuracy": 0.6847222222222222,
+        "mean_member_f1": 0.7304459482704407,
+        "mean_healthy_false_alarm_rate": 0.0,
+        "mean_damaged_severity_mae_pp": 11.982460402277624
+      },
+      "false_alarm_constraint_met": true
+    },
+    "multi": {
+      "candidates": [
+        {
+          "penalty": 0.5,
+          "mean_exact_location_accuracy": 0.5944444444444444,
+          "mean_member_f1": 0.7153937414806527,
+          "mean_healthy_false_alarm_rate": 0.40178571428571425,
+          "mean_damaged_severity_mae_pp": 7.726285405201181
+        },
+        {
+          "penalty": 1.0,
+          "mean_exact_location_accuracy": 0.6881944444444444,
+          "mean_member_f1": 0.7637981642643346,
+          "mean_healthy_false_alarm_rate": 0.2113095238095238,
+          "mean_damaged_severity_mae_pp": 7.969743818704617
+        },
+        {
+          "penalty": 2.0,
+          "mean_exact_location_accuracy": 0.75625,
+          "mean_member_f1": 0.8080328998175165,
+          "mean_healthy_false_alarm_rate": 0.035714285714285705,
+          "mean_damaged_severity_mae_pp": 8.512370078319906
+        },
+        {
+          "penalty": 4.0,
+          "mean_exact_location_accuracy": 0.7444444444444444,
+          "mean_member_f1": 0.7960969637384352,
+          "mean_healthy_false_alarm_rate": 0.0,
+          "mean_damaged_severity_mae_pp": 9.253483464060581
+        },
+        {
+          "penalty": 8.0,
+          "mean_exact_location_accuracy": 0.7097222222222223,
+          "mean_member_f1": 0.7627442403566148,
+          "mean_healthy_false_alarm_rate": 0.0,
+          "mean_damaged_severity_mae_pp": 10.597426248259888
+        }
+      ],
+      "selected": {
+        "penalty": 2.0,
+        "mean_exact_location_accuracy": 0.75625,
+        "mean_member_f1": 0.8080328998175165,
+        "mean_healthy_false_alarm_rate": 0.035714285714285705,
+        "mean_damaged_severity_mae_pp": 8.512370078319906
+      },
+      "false_alarm_constraint_met": true
+    }
+  },
+  "experiments": [
+    {
+      "protocol": "single",
+      "sensor_count": 5,
+      "condition": "clean",
+      "true_noise_std": 0.0,
+      "assumed_noise_std": 0.0,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.5083333333333333,
+          "member_f1": 0.5783132530120482,
+          "damaged_severity_mae_pp": 18.058427578427295,
+          "all_member_severity_mae_pp": 1.2737864702556179,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.45416666666666666,
+          "member_f1": 0.578096947935368,
+          "damaged_severity_mae_pp": 15.071577561922577,
+          "all_member_severity_mae_pp": 1.36345177275868,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.6333333333333333,
+          "member_f1": 0.616822429906542,
+          "damaged_severity_mae_pp": 15.922412696859425,
+          "all_member_severity_mae_pp": 1.1577175436532254,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 1,
+      "sparse_discarded_candidate_fits": 39,
+      "paired_location_gain_pp": {
+        "mean": 17.916666666666668,
+        "ci95": [
+          12.5,
+          23.333333333333332
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 5,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.01,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.4,
+          "member_f1": 0.42105263157894735,
+          "damaged_severity_mae_pp": 21.988967710602804,
+          "all_member_severity_mae_pp": 2.0826936160199683,
+          "healthy_false_alarm_rate": 0.038461538461538464
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0375,
+          "member_f1": 0.28338430173292556,
+          "damaged_severity_mae_pp": 19.54464439371878,
+          "all_member_severity_mae_pp": 2.9075884500588596,
+          "healthy_false_alarm_rate": 0.9807692307692307
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.4,
+          "member_f1": 0.4011627906976744,
+          "damaged_severity_mae_pp": 24.740192087324182,
+          "all_member_severity_mae_pp": 1.497884564968586,
+          "healthy_false_alarm_rate": 0.07692307692307693
+        }
+      },
+      "legacy_optimizer_failures": 1,
+      "sparse_discarded_candidate_fits": 14,
+      "paired_location_gain_pp": {
+        "mean": 36.25,
+        "ci95": [
+          30.416666666666668,
+          42.916666666666664
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 90.38461538461539,
+        "ci95": [
+          80.76923076923077,
+          98.07692307692308
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 5,
+      "condition": "harsh",
+      "true_noise_std": 0.03,
+      "assumed_noise_std": 0.03,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.2375,
+          "member_f1": 0.2792022792022792,
+          "damaged_severity_mae_pp": 26.13057161611487,
+          "all_member_severity_mae_pp": 3.034816654958649,
+          "healthy_false_alarm_rate": 0.38461538461538464
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.004166666666666667,
+          "member_f1": 0.16789667896678967,
+          "damaged_severity_mae_pp": 24.143769669612666,
+          "all_member_severity_mae_pp": 4.319905255989913,
+          "healthy_false_alarm_rate": 0.9807692307692307
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.30833333333333335,
+          "member_f1": 0.2945205479452055,
+          "damaged_severity_mae_pp": 28.622191038340656,
+          "all_member_severity_mae_pp": 1.4824591050405689,
+          "healthy_false_alarm_rate": 0.07692307692307693
+        }
+      },
+      "legacy_optimizer_failures": 1,
+      "sparse_discarded_candidate_fits": 11,
+      "paired_location_gain_pp": {
+        "mean": 30.416666666666668,
+        "ci95": [
+          24.989583333333332,
+          36.25
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 90.38461538461539,
+        "ci95": [
+          82.6923076923077,
+          98.07692307692308
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 10,
+      "condition": "clean",
+      "true_noise_std": 0.0,
+      "assumed_noise_std": 0.0,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.7583333333333333,
+          "member_f1": 0.8387096774193549,
+          "damaged_severity_mae_pp": 9.059956734401478,
+          "all_member_severity_mae_pp": 0.5624280050006261,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.7916666666666666,
+          "member_f1": 0.847870182555781,
+          "damaged_severity_mae_pp": 3.565240738207988,
+          "all_member_severity_mae_pp": 0.3905677135230556,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.9125,
+          "member_f1": 0.9227373068432672,
+          "damaged_severity_mae_pp": 3.267294412339676,
+          "all_member_severity_mae_pp": 0.2359150062692341,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 12.083333333333334,
+        "ci95": [
+          7.083333333333333,
+          17.5
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 10,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.01,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.5958333333333333,
+          "member_f1": 0.6885245901639344,
+          "damaged_severity_mae_pp": 13.661501152211027,
+          "all_member_severity_mae_pp": 1.2459574570066003,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.03333333333333333,
+          "member_f1": 0.3700277520814061,
+          "damaged_severity_mae_pp": 7.995196068687091,
+          "all_member_severity_mae_pp": 2.444407124090096,
+          "healthy_false_alarm_rate": 0.9423076923076923
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.6875,
+          "member_f1": 0.7475247524752475,
+          "damaged_severity_mae_pp": 12.278330393504785,
+          "all_member_severity_mae_pp": 0.7781039040950164,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 65.41666666666667,
+        "ci95": [
+          59.57291666666667,
+          71.26041666666666
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 94.23076923076923,
+        "ci95": [
+          86.53846153846153,
+          100.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 10,
+      "condition": "harsh",
+      "true_noise_std": 0.03,
+      "assumed_noise_std": 0.03,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.2625,
+          "member_f1": 0.384,
+          "damaged_severity_mae_pp": 21.092146877101513,
+          "all_member_severity_mae_pp": 2.709798393470867,
+          "healthy_false_alarm_rate": 0.46153846153846156
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0,
+          "member_f1": 0.22013758599124453,
+          "damaged_severity_mae_pp": 14.010376416584727,
+          "all_member_severity_mae_pp": 5.287292241376728,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.4791666666666667,
+          "member_f1": 0.5449101796407185,
+          "damaged_severity_mae_pp": 20.170853555310607,
+          "all_member_severity_mae_pp": 1.0375511055603266,
+          "healthy_false_alarm_rate": 0.038461538461538464
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 47.916666666666664,
+        "ci95": [
+          41.65625,
+          54.583333333333336
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 96.15384615384616,
+        "ci95": [
+          90.38461538461539,
+          100.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 20,
+      "condition": "clean",
+      "true_noise_std": 0.0,
+      "assumed_noise_std": 0.0,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.8291666666666667,
+          "member_f1": 0.8909952606635071,
+          "damaged_severity_mae_pp": 6.4102219921876955,
+          "all_member_severity_mae_pp": 0.40749926046968765,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 1.0,
+          "member_f1": 1.0,
+          "damaged_severity_mae_pp": 0.1393877402468567,
+          "all_member_severity_mae_pp": 0.019937995641385788,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.975,
+          "member_f1": 0.9824561403508771,
+          "damaged_severity_mae_pp": 0.9299441181133408,
+          "all_member_severity_mae_pp": 0.05038384170935747,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 2,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": -2.5,
+        "ci95": [
+          -4.583333333333333,
+          -0.8333333333333334
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 20,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.01,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.6875,
+          "member_f1": 0.781491002570694,
+          "damaged_severity_mae_pp": 10.477608856908937,
+          "all_member_severity_mae_pp": 1.0043239318934705,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.1,
+          "member_f1": 0.49019607843137253,
+          "damaged_severity_mae_pp": 2.3276286317827064,
+          "all_member_severity_mae_pp": 1.5835443681748187,
+          "healthy_false_alarm_rate": 0.9615384615384616
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.8708333333333333,
+          "member_f1": 0.926605504587156,
+          "damaged_severity_mae_pp": 3.876608846764571,
+          "all_member_severity_mae_pp": 0.1875667986597067,
+          "healthy_false_alarm_rate": 0.057692307692307696
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 77.08333333333333,
+        "ci95": [
+          71.25,
+          82.91666666666667
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 90.38461538461539,
+        "ci95": [
+          82.6923076923077,
+          98.07692307692308
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 20,
+      "condition": "harsh",
+      "true_noise_std": 0.03,
+      "assumed_noise_std": 0.03,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.325,
+          "member_f1": 0.44321329639889195,
+          "damaged_severity_mae_pp": 18.151063225180256,
+          "all_member_severity_mae_pp": 2.572126054584106,
+          "healthy_false_alarm_rate": 0.34615384615384615
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0,
+          "member_f1": 0.24106113033448673,
+          "damaged_severity_mae_pp": 7.972445411810288,
+          "all_member_severity_mae_pp": 4.748976161519578,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.6041666666666666,
+          "member_f1": 0.7111111111111111,
+          "damaged_severity_mae_pp": 13.17367846434768,
+          "all_member_severity_mae_pp": 0.6123133283233251,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 60.416666666666664,
+        "ci95": [
+          54.583333333333336,
+          66.26041666666666
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 38,
+      "condition": "clean",
+      "true_noise_std": 0.0,
+      "assumed_noise_std": 0.0,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.8333333333333334,
+          "member_f1": 0.8931116389548693,
+          "damaged_severity_mae_pp": 6.216035589572949,
+          "all_member_severity_mae_pp": 0.40637124202001745,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 1.0,
+          "member_f1": 1.0,
+          "damaged_severity_mae_pp": 0.07817955981083967,
+          "all_member_severity_mae_pp": 0.015326478298776475,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.9791666666666666,
+          "member_f1": 0.9868421052631579,
+          "damaged_severity_mae_pp": 0.5561026157876646,
+          "all_member_severity_mae_pp": 0.028043477119309462,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": -2.0833333333333335,
+        "ci95": [
+          -3.75,
+          -0.4166666666666667
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 38,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.01,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.6833333333333333,
+          "member_f1": 0.7772020725388601,
+          "damaged_severity_mae_pp": 10.338502041111436,
+          "all_member_severity_mae_pp": 1.0378393954473577,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.14166666666666666,
+          "member_f1": 0.5254629629629629,
+          "damaged_severity_mae_pp": 1.7885035763082666,
+          "all_member_severity_mae_pp": 1.3546773540844206,
+          "healthy_false_alarm_rate": 0.9423076923076923
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.8708333333333333,
+          "member_f1": 0.9284064665127021,
+          "damaged_severity_mae_pp": 3.3680000006633626,
+          "all_member_severity_mae_pp": 0.1577066352053494,
+          "healthy_false_alarm_rate": 0.038461538461538464
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 72.91666666666667,
+        "ci95": [
+          66.65625,
+          79.16666666666667
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 90.38461538461539,
+        "ci95": [
+          82.6923076923077,
+          98.07692307692308
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 38,
+      "condition": "harsh",
+      "true_noise_std": 0.03,
+      "assumed_noise_std": 0.03,
+      "noise_assumption_factor": 1.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.32916666666666666,
+          "member_f1": 0.4425770308123249,
+          "damaged_severity_mae_pp": 18.098177365063023,
+          "all_member_severity_mae_pp": 2.6138438814076657,
+          "healthy_false_alarm_rate": 0.3269230769230769
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0,
+          "member_f1": 0.2783300198807157,
+          "damaged_severity_mae_pp": 6.833552620551295,
+          "all_member_severity_mae_pp": 3.9154138510997187,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.6125,
+          "member_f1": 0.7094972067039106,
+          "damaged_severity_mae_pp": 12.690765303056208,
+          "all_member_severity_mae_pp": 0.5830513159830937,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 61.25,
+        "ci95": [
+          55.416666666666664,
+          67.5
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 10,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.005,
+      "noise_assumption_factor": 0.5,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.5958333333333333,
+          "member_f1": 0.6885245901639344,
+          "damaged_severity_mae_pp": 13.661501152211027,
+          "all_member_severity_mae_pp": 1.2459574570066003,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.03333333333333333,
+          "member_f1": 0.3700277520814061,
+          "damaged_severity_mae_pp": 7.995185402590839,
+          "all_member_severity_mae_pp": 2.444429827943795,
+          "healthy_false_alarm_rate": 0.9423076923076923
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.5,
+          "member_f1": 0.6441351888667992,
+          "damaged_severity_mae_pp": 11.584212004471844,
+          "all_member_severity_mae_pp": 1.234034110807645,
+          "healthy_false_alarm_rate": 0.4230769230769231
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 46.666666666666664,
+        "ci95": [
+          40.0,
+          53.333333333333336
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 51.92307692307692,
+        "ci95": [
+          36.53846153846154,
+          65.38461538461539
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "single",
+      "sensor_count": 10,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.02,
+      "noise_assumption_factor": 2.0,
+      "penalty": 4.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.5958333333333333,
+          "member_f1": 0.6885245901639344,
+          "damaged_severity_mae_pp": 13.661501152211027,
+          "all_member_severity_mae_pp": 1.2459574570066003,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.03333333333333333,
+          "member_f1": 0.3700277520814061,
+          "damaged_severity_mae_pp": 7.9952002200749845,
+          "all_member_severity_mae_pp": 2.4444037913507266,
+          "healthy_false_alarm_rate": 0.9423076923076923
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.5708333333333333,
+          "member_f1": 0.6611111111111111,
+          "damaged_severity_mae_pp": 16.26139154576962,
+          "all_member_severity_mae_pp": 0.8866380731605665,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 53.75,
+        "ci95": [
+          47.5,
+          60.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 94.23076923076923,
+        "ci95": [
+          86.53846153846153,
+          100.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 5,
+      "condition": "clean",
+      "true_noise_std": 0.0,
+      "assumed_noise_std": 0.0,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.6333333333333333,
+          "member_f1": 0.7292225201072386,
+          "damaged_severity_mae_pp": 14.727589076433429,
+          "all_member_severity_mae_pp": 0.9762189899785633,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.6375,
+          "member_f1": 0.7664670658682635,
+          "damaged_severity_mae_pp": 9.040357498994549,
+          "all_member_severity_mae_pp": 0.7860491845585231,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.8291666666666667,
+          "member_f1": 0.8513513513513513,
+          "damaged_severity_mae_pp": 5.910350410142221,
+          "all_member_severity_mae_pp": 0.46044467937823375,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 3,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 19.166666666666668,
+        "ci95": [
+          13.75,
+          25.416666666666668
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 5,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.01,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.5,
+          "member_f1": 0.5609756097560976,
+          "damaged_severity_mae_pp": 19.445833256375572,
+          "all_member_severity_mae_pp": 1.8218271016845569,
+          "healthy_false_alarm_rate": 0.019230769230769232
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.004166666666666667,
+          "member_f1": 0.24630541871921183,
+          "damaged_severity_mae_pp": 13.396401533810073,
+          "all_member_severity_mae_pp": 3.7911141610670342,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.525,
+          "member_f1": 0.6112600536193029,
+          "damaged_severity_mae_pp": 17.400822183158976,
+          "all_member_severity_mae_pp": 1.0192431322376643,
+          "healthy_false_alarm_rate": 0.057692307692307696
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 52.083333333333336,
+        "ci95": [
+          46.239583333333336,
+          57.916666666666664
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 94.23076923076923,
+        "ci95": [
+          86.53846153846153,
+          100.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 5,
+      "condition": "harsh",
+      "true_noise_std": 0.03,
+      "assumed_noise_std": 0.03,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.31666666666666665,
+          "member_f1": 0.3157894736842105,
+          "damaged_severity_mae_pp": 24.153072381057868,
+          "all_member_severity_mae_pp": 3.0007206646344766,
+          "healthy_false_alarm_rate": 0.19230769230769232
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0,
+          "member_f1": 0.16213275299238303,
+          "damaged_severity_mae_pp": 20.877869998133423,
+          "all_member_severity_mae_pp": 9.730880016713389,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.32083333333333336,
+          "member_f1": 0.39644970414201186,
+          "damaged_severity_mae_pp": 24.505476461606737,
+          "all_member_severity_mae_pp": 1.496752892684206,
+          "healthy_false_alarm_rate": 0.19230769230769232
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 32.083333333333336,
+        "ci95": [
+          26.666666666666668,
+          38.333333333333336
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 80.76923076923077,
+        "ci95": [
+          69.23076923076923,
+          90.38461538461539
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 10,
+      "condition": "clean",
+      "true_noise_std": 0.0,
+      "assumed_noise_std": 0.0,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.7708333333333334,
+          "member_f1": 0.8585365853658536,
+          "damaged_severity_mae_pp": 8.399505599837278,
+          "all_member_severity_mae_pp": 0.5178578138520582,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.95,
+          "member_f1": 0.9702127659574468,
+          "damaged_severity_mae_pp": 1.0528843943064192,
+          "all_member_severity_mae_pp": 0.1355774313253621,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.9583333333333334,
+          "member_f1": 0.9734513274336283,
+          "damaged_severity_mae_pp": 1.3640898941224942,
+          "all_member_severity_mae_pp": 0.06768372638499916,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 4,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 0.8333333333333334,
+        "ci95": [
+          -2.5,
+          4.583333333333333
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 10,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.01,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.6333333333333333,
+          "member_f1": 0.726775956284153,
+          "damaged_severity_mae_pp": 12.153859272066732,
+          "all_member_severity_mae_pp": 1.0975382433832441,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0,
+          "member_f1": 0.3134978229317852,
+          "damaged_severity_mae_pp": 4.6253936089937016,
+          "all_member_severity_mae_pp": 3.264274453500962,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.7666666666666667,
+          "member_f1": 0.8532110091743119,
+          "damaged_severity_mae_pp": 6.338585598372086,
+          "all_member_severity_mae_pp": 0.38336665139080145,
+          "healthy_false_alarm_rate": 0.09615384615384616
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 76.66666666666667,
+        "ci95": [
+          71.66666666666667,
+          82.08333333333333
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 90.38461538461539,
+        "ci95": [
+          80.76923076923077,
+          98.07692307692308
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 10,
+      "condition": "harsh",
+      "true_noise_std": 0.03,
+      "assumed_noise_std": 0.03,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.35,
+          "member_f1": 0.378698224852071,
+          "damaged_severity_mae_pp": 20.21686397246095,
+          "all_member_severity_mae_pp": 2.7659641214634134,
+          "healthy_false_alarm_rate": 0.21153846153846154
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0,
+          "member_f1": 0.1888372093023256,
+          "damaged_severity_mae_pp": 14.02367310776067,
+          "all_member_severity_mae_pp": 10.626213693657718,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.5666666666666667,
+          "member_f1": 0.671957671957672,
+          "damaged_severity_mae_pp": 15.040805230652571,
+          "all_member_severity_mae_pp": 0.8738625930291637,
+          "healthy_false_alarm_rate": 0.057692307692307696
+        }
+      },
+      "legacy_optimizer_failures": 1,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 56.666666666666664,
+        "ci95": [
+          50.82291666666667,
+          62.916666666666664
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 94.23076923076923,
+        "ci95": [
+          86.53846153846153,
+          100.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 20,
+      "condition": "clean",
+      "true_noise_std": 0.0,
+      "assumed_noise_std": 0.0,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.8416666666666667,
+          "member_f1": 0.9035294117647059,
+          "damaged_severity_mae_pp": 6.030875779539515,
+          "all_member_severity_mae_pp": 0.39740032244980533,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 1.0,
+          "member_f1": 1.0,
+          "damaged_severity_mae_pp": 0.05115749340171601,
+          "all_member_severity_mae_pp": 0.007183226207818137,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.975,
+          "member_f1": 0.9846153846153847,
+          "damaged_severity_mae_pp": 0.7505741065198073,
+          "all_member_severity_mae_pp": 0.04048660286105446,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": -2.5,
+        "ci95": [
+          -4.177083333333333,
+          -0.4166666666666667
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 20,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.01,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.7125,
+          "member_f1": 0.7864583333333334,
+          "damaged_severity_mae_pp": 9.182194194156573,
+          "all_member_severity_mae_pp": 0.9029910388953429,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.2625,
+          "member_f1": 0.6096256684491979,
+          "damaged_severity_mae_pp": 1.5791277348682475,
+          "all_member_severity_mae_pp": 1.2000623812466134,
+          "healthy_false_alarm_rate": 0.7307692307692307
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.9125,
+          "member_f1": 0.9492273730684326,
+          "damaged_severity_mae_pp": 2.3426991664659265,
+          "all_member_severity_mae_pp": 0.12842934433937897,
+          "healthy_false_alarm_rate": 0.057692307692307696
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 1,
+      "paired_location_gain_pp": {
+        "mean": 65.0,
+        "ci95": [
+          57.916666666666664,
+          71.66666666666667
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 67.3076923076923,
+        "ci95": [
+          53.84615384615385,
+          78.84615384615384
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 20,
+      "condition": "harsh",
+      "true_noise_std": 0.03,
+      "assumed_noise_std": 0.03,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.36666666666666664,
+          "member_f1": 0.4,
+          "damaged_severity_mae_pp": 18.151189993904858,
+          "all_member_severity_mae_pp": 2.673615482363613,
+          "healthy_false_alarm_rate": 0.17307692307692307
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0,
+          "member_f1": 0.2779187817258883,
+          "damaged_severity_mae_pp": 5.651154094511435,
+          "all_member_severity_mae_pp": 4.082576645661387,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.7208333333333333,
+          "member_f1": 0.8192771084337349,
+          "damaged_severity_mae_pp": 7.840397348098857,
+          "all_member_severity_mae_pp": 0.45063551614144837,
+          "healthy_false_alarm_rate": 0.07692307692307693
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 72.08333333333333,
+        "ci95": [
+          66.66666666666667,
+          77.51041666666666
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 92.3076923076923,
+        "ci95": [
+          84.61538461538461,
+          98.07692307692308
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 38,
+      "condition": "clean",
+      "true_noise_std": 0.0,
+      "assumed_noise_std": 0.0,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.8458333333333333,
+          "member_f1": 0.9061032863849765,
+          "damaged_severity_mae_pp": 5.845344318167388,
+          "all_member_severity_mae_pp": 0.3960565883279232,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 1.0,
+          "member_f1": 1.0,
+          "damaged_severity_mae_pp": 0.02395913920460578,
+          "all_member_severity_mae_pp": 0.0049974312660582085,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.9791666666666666,
+          "member_f1": 0.9868421052631579,
+          "damaged_severity_mae_pp": 0.5990146050690885,
+          "all_member_severity_mae_pp": 0.02867238208602126,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": -2.0833333333333335,
+        "ci95": [
+          -3.75,
+          -0.4166666666666667
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 38,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.01,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.7125,
+          "member_f1": 0.7979274611398963,
+          "damaged_severity_mae_pp": 9.023694336370008,
+          "all_member_severity_mae_pp": 0.9391213010718054,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.4375,
+          "member_f1": 0.7120743034055728,
+          "damaged_severity_mae_pp": 1.0733504058067036,
+          "all_member_severity_mae_pp": 0.8913098414413423,
+          "healthy_false_alarm_rate": 0.5384615384615384
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.95,
+          "member_f1": 0.973568281938326,
+          "damaged_severity_mae_pp": 1.7274658901010813,
+          "all_member_severity_mae_pp": 0.0863228448617346,
+          "healthy_false_alarm_rate": 0.019230769230769232
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 1,
+      "paired_location_gain_pp": {
+        "mean": 51.25,
+        "ci95": [
+          45.0,
+          57.5
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 51.92307692307692,
+        "ci95": [
+          38.46153846153846,
+          65.38461538461539
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 38,
+      "condition": "harsh",
+      "true_noise_std": 0.03,
+      "assumed_noise_std": 0.03,
+      "noise_assumption_factor": 1.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.35833333333333334,
+          "member_f1": 0.3878787878787879,
+          "damaged_severity_mae_pp": 18.091206859784272,
+          "all_member_severity_mae_pp": 2.7495009930924823,
+          "healthy_false_alarm_rate": 0.15384615384615385
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0125,
+          "member_f1": 0.3654485049833887,
+          "damaged_severity_mae_pp": 4.319701388230113,
+          "all_member_severity_mae_pp": 2.514586629523425,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.7916666666666666,
+          "member_f1": 0.8701923076923077,
+          "damaged_severity_mae_pp": 6.326207309045506,
+          "all_member_severity_mae_pp": 0.3107946519095161,
+          "healthy_false_alarm_rate": 0.019230769230769232
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 77.91666666666667,
+        "ci95": [
+          72.5,
+          82.91666666666667
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 98.07692307692308,
+        "ci95": [
+          94.23076923076923,
+          100.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 10,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.005,
+      "noise_assumption_factor": 0.5,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.6333333333333333,
+          "member_f1": 0.726775956284153,
+          "damaged_severity_mae_pp": 12.153859272066732,
+          "all_member_severity_mae_pp": 1.0975382433832441,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0,
+          "member_f1": 0.3134978229317852,
+          "damaged_severity_mae_pp": 4.62540269822376,
+          "all_member_severity_mae_pp": 3.264200281642984,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.5208333333333334,
+          "member_f1": 0.7415730337078652,
+          "damaged_severity_mae_pp": 6.076092609418159,
+          "all_member_severity_mae_pp": 0.76331984422251,
+          "healthy_false_alarm_rate": 0.5961538461538461
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 52.083333333333336,
+        "ci95": [
+          45.833333333333336,
+          58.34374999999999
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 40.38461538461539,
+        "ci95": [
+          26.923076923076923,
+          53.84615384615385
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    },
+    {
+      "protocol": "multi",
+      "sensor_count": 10,
+      "condition": "noisy",
+      "true_noise_std": 0.01,
+      "assumed_noise_std": 0.02,
+      "noise_assumption_factor": 2.0,
+      "penalty": 2.0,
+      "test_cases": 240,
+      "evaluated_cases": 240,
+      "healthy_cases": 52,
+      "abstentions": 0,
+      "metrics": {
+        "rf": {
+          "exact_location_accuracy": 0.6333333333333333,
+          "member_f1": 0.726775956284153,
+          "damaged_severity_mae_pp": 12.153859272066732,
+          "all_member_severity_mae_pp": 1.0975382433832441,
+          "healthy_false_alarm_rate": 0.0
+        },
+        "legacy": {
+          "exact_location_accuracy": 0.0,
+          "member_f1": 0.3134978229317852,
+          "damaged_severity_mae_pp": 4.625418800972885,
+          "all_member_severity_mae_pp": 3.2642143976994538,
+          "healthy_false_alarm_rate": 1.0
+        },
+        "sparse": {
+          "exact_location_accuracy": 0.7458333333333333,
+          "member_f1": 0.836272040302267,
+          "damaged_severity_mae_pp": 8.845232200663597,
+          "all_member_severity_mae_pp": 0.4064094891072425,
+          "healthy_false_alarm_rate": 0.0
+        }
+      },
+      "legacy_optimizer_failures": 0,
+      "sparse_discarded_candidate_fits": 0,
+      "paired_location_gain_pp": {
+        "mean": 74.58333333333333,
+        "ci95": [
+          68.75,
+          79.58333333333333
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      },
+      "paired_healthy_alarm_reduction_pp": {
+        "mean": 100.0,
+        "ci95": [
+          100.0,
+          100.0
+        ],
+        "method": "Paired bootstrap over independent test cases, 1000 resamples; one training seed"
+      }
+    }
+  ],
+  "protocol": {
+    "split": "Frozen pretrained forests; fresh validation and test seeds, distinct from original training and prior test study",
+    "pairing": "Identical test damage, layout, observation draws and dropout for RF, legacy fit and sparse fit",
+    "noise": "Declared Gaussian noise standard deviation supplied to sparse method; not estimated from hidden labels",
+    "drift": "Common normalized offset is estimated from observations, not supplied to inverse fit",
+    "abstention": "All-missing packets excluded from conditional accuracy and separately counted",
+    "metrics": "Damage threshold 5%; RF location uses vote >=0.5; both inverse methods use severity >=0.05",
+    "uncertainty": "Paired case-bootstrap intervals, one forest-training seed; no hardware/model-mismatch validation",
+    "search": "Healthy + all 21 single-member fits + pairs among six best single-member residual fits"
+  },
+  "elapsed_seconds": 435.9235050999996
+}

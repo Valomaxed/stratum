@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "structural-twin"
+version = "0.1.0"
+description = "Physics-aware structural digital twin research prototype"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24", "scipy>=1.10", "scikit-learn>=1.4"]
+
+[tool.setuptools.packages.find]
+include = ["twin*"]

@@ -1,0 +1,1117 @@
+{
+  "version": "bridge-dynamic-sparse-v1",
+  "contract": "73dc0532aeaa420ae6d6fc7aa1605dedcf696a2767f7c0d62d1c34df4e1a28be",
+  "dataset_sha256": "1e82225827e076122f5de87cbc5c244a4b8f0d70f917f2f7ed432bf3d2303b17",
+  "random_seed": 481026,
+  "healthy_loss_step": 0.02,
+  "method": "Greedy grouped D-optimal, regularization 0.01; 20 phase readings per physical channel",
+  "orders": {
+    "guided": [
+      14,
+      13,
+      27,
+      26,
+      15,
+      12,
+      24,
+      25,
+      60,
+      43,
+      6,
+      62,
+      4,
+      41,
+      54,
+      66,
+      40,
+      5,
+      42,
+      7,
+      56,
+      68,
+      34,
+      23,
+      73,
+      49,
+      75,
+      51,
+      67,
+      55,
+      69,
+      57,
+      20,
+      32,
+      16,
+      44,
+      50,
+      74,
+      31,
+      9,
+      46,
+      11,
+      63,
+      38,
+      61,
+      2,
+      18,
+      29,
+      53,
+      77,
+      72,
+      48,
+      59,
+      71,
+      45,
+      8,
+      3,
+      39,
+      64,
+      0,
+      36,
+      19,
+      1,
+      37,
+      30,
+      28,
+      70,
+      17,
+      58,
+      22,
+      52,
+      76,
+      10,
+      33,
+      47,
+      35,
+      21,
+      65,
+      109,
+      106,
+      100,
+      103,
+      108,
+      105,
+      99,
+      102,
+      97,
+      121,
+      94,
+      118,
+      112,
+      88,
+      115,
+      91,
+      96,
+      117,
+      93,
+      120,
+      87,
+      111,
+      90,
+      114,
+      122,
+      83,
+      125,
+      123,
+      110,
+      78,
+      128,
+      116,
+      95,
+      80,
+      113,
+      82,
+      127,
+      85,
+      130,
+      119,
+      104,
+      89,
+      107,
+      98,
+      101,
+      92,
+      86,
+      81,
+      126,
+      84,
+      129,
+      124,
+      79
+    ],
+    "random": [
+      126,
+      33,
+      53,
+      15,
+      107,
+      40,
+      32,
+      103,
+      50,
+      91,
+      17,
+      57,
+      31,
+      28,
+      70,
+      1,
+      22,
+      8,
+      72,
+      97,
+      62,
+      12,
+      21,
+      78,
+      56,
+      49,
+      5,
+      46,
+      127,
+      68,
+      92,
+      102,
+      83,
+      75,
+      79,
+      129,
+      120,
+      43,
+      52,
+      89,
+      110,
+      9,
+      20,
+      69,
+      64,
+      29,
+      61,
+      90,
+      128,
+      71,
+      60,
+      82,
+      54,
+      18,
+      44,
+      95,
+      19,
+      2,
+      47,
+      34,
+      25,
+      113,
+      24,
+      121,
+      108,
+      125,
+      36,
+      87,
+      93,
+      101,
+      39,
+      23,
+      99,
+      6,
+      4,
+      38,
+      51,
+      67,
+      124,
+      74,
+      73,
+      14,
+      119,
+      35,
+      84,
+      63,
+      116,
+      27,
+      16,
+      81,
+      85,
+      80,
+      114,
+      86,
+      115,
+      65,
+      7,
+      109,
+      58,
+      104,
+      88,
+      123,
+      105,
+      3,
+      30,
+      94,
+      77,
+      112,
+      41,
+      76,
+      37,
+      96,
+      130,
+      13,
+      55,
+      59,
+      45,
+      42,
+      122,
+      66,
+      111,
+      117,
+      11,
+      106,
+      118,
+      0,
+      98,
+      26,
+      10,
+      100,
+      48
+    ]
+  },
+  "catalog": [
+    {
+      "id": "SG01",
+      "kind": "strain",
+      "member": 0,
+      "unit": "strain"
+    },
+    {
+      "id": "SG02",
+      "kind": "strain",
+      "member": 1,
+      "unit": "strain"
+    },
+    {
+      "id": "SG03",
+      "kind": "strain",
+      "member": 2,
+      "unit": "strain"
+    },
+    {
+      "id": "SG04",
+      "kind": "strain",
+      "member": 3,
+      "unit": "strain"
+    },
+    {
+      "id": "SG05",
+      "kind": "strain",
+      "member": 4,
+      "unit": "strain"
+    },
+    {
+      "id": "SG06",
+      "kind": "strain",
+      "member": 5,
+      "unit": "strain"
+    },
+    {
+      "id": "SG07",
+      "kind": "strain",
+      "member": 6,
+      "unit": "strain"
+    },
+    {
+      "id": "SG08",
+      "kind": "strain",
+      "member": 7,
+      "unit": "strain"
+    },
+    {
+      "id": "SG09",
+      "kind": "strain",
+      "member": 8,
+      "unit": "strain"
+    },
+    {
+      "id": "SG10",
+      "kind": "strain",
+      "member": 9,
+      "unit": "strain"
+    },
+    {
+      "id": "SG11",
+      "kind": "strain",
+      "member": 10,
+      "unit": "strain"
+    },
+    {
+      "id": "SG12",
+      "kind": "strain",
+      "member": 11,
+      "unit": "strain"
+    },
+    {
+      "id": "SG13",
+      "kind": "strain",
+      "member": 12,
+      "unit": "strain"
+    },
+    {
+      "id": "SG14",
+      "kind": "strain",
+      "member": 13,
+      "unit": "strain"
+    },
+    {
+      "id": "SG15",
+      "kind": "strain",
+      "member": 14,
+      "unit": "strain"
+    },
+    {
+      "id": "SG16",
+      "kind": "strain",
+      "member": 15,
+      "unit": "strain"
+    },
+    {
+      "id": "SG17",
+      "kind": "strain",
+      "member": 16,
+      "unit": "strain"
+    },
+    {
+      "id": "SG18",
+      "kind": "strain",
+      "member": 17,
+      "unit": "strain"
+    },
+    {
+      "id": "SG19",
+      "kind": "strain",
+      "member": 18,
+      "unit": "strain"
+    },
+    {
+      "id": "SG20",
+      "kind": "strain",
+      "member": 19,
+      "unit": "strain"
+    },
+    {
+      "id": "SG21",
+      "kind": "strain",
+      "member": 20,
+      "unit": "strain"
+    },
+    {
+      "id": "SG22",
+      "kind": "strain",
+      "member": 21,
+      "unit": "strain"
+    },
+    {
+      "id": "SG23",
+      "kind": "strain",
+      "member": 22,
+      "unit": "strain"
+    },
+    {
+      "id": "SG24",
+      "kind": "strain",
+      "member": 23,
+      "unit": "strain"
+    },
+    {
+      "id": "SG25",
+      "kind": "strain",
+      "member": 24,
+      "unit": "strain"
+    },
+    {
+      "id": "SG26",
+      "kind": "strain",
+      "member": 25,
+      "unit": "strain"
+    },
+    {
+      "id": "SG27",
+      "kind": "strain",
+      "member": 26,
+      "unit": "strain"
+    },
+    {
+      "id": "SG28",
+      "kind": "strain",
+      "member": 27,
+      "unit": "strain"
+    },
+    {
+      "id": "SG29",
+      "kind": "strain",
+      "member": 28,
+      "unit": "strain"
+    },
+    {
+      "id": "SG30",
+      "kind": "strain",
+      "member": 29,
+      "unit": "strain"
+    },
+    {
+      "id": "SG31",
+      "kind": "strain",
+      "member": 30,
+      "unit": "strain"
+    },
+    {
+      "id": "SG32",
+      "kind": "strain",
+      "member": 31,
+      "unit": "strain"
+    },
+    {
+      "id": "SG33",
+      "kind": "strain",
+      "member": 32,
+      "unit": "strain"
+    },
+    {
+      "id": "SG34",
+      "kind": "strain",
+      "member": 33,
+      "unit": "strain"
+    },
+    {
+      "id": "SG35",
+      "kind": "strain",
+      "member": 34,
+      "unit": "strain"
+    },
+    {
+      "id": "SG36",
+      "kind": "strain",
+      "member": 35,
+      "unit": "strain"
+    },
+    {
+      "id": "SG37",
+      "kind": "strain",
+      "member": 36,
+      "unit": "strain"
+    },
+    {
+      "id": "SG38",
+      "kind": "strain",
+      "member": 37,
+      "unit": "strain"
+    },
+    {
+      "id": "SG39",
+      "kind": "strain",
+      "member": 38,
+      "unit": "strain"
+    },
+    {
+      "id": "SG40",
+      "kind": "strain",
+      "member": 39,
+      "unit": "strain"
+    },
+    {
+      "id": "SG41",
+      "kind": "strain",
+      "member": 40,
+      "unit": "strain"
+    },
+    {
+      "id": "SG42",
+      "kind": "strain",
+      "member": 41,
+      "unit": "strain"
+    },
+    {
+      "id": "SG43",
+      "kind": "strain",
+      "member": 42,
+      "unit": "strain"
+    },
+    {
+      "id": "SG44",
+      "kind": "strain",
+      "member": 43,
+      "unit": "strain"
+    },
+    {
+      "id": "SG45",
+      "kind": "strain",
+      "member": 44,
+      "unit": "strain"
+    },
+    {
+      "id": "SG46",
+      "kind": "strain",
+      "member": 45,
+      "unit": "strain"
+    },
+    {
+      "id": "SG47",
+      "kind": "strain",
+      "member": 46,
+      "unit": "strain"
+    },
+    {
+      "id": "SG48",
+      "kind": "strain",
+      "member": 47,
+      "unit": "strain"
+    },
+    {
+      "id": "SG49",
+      "kind": "strain",
+      "member": 48,
+      "unit": "strain"
+    },
+    {
+      "id": "SG50",
+      "kind": "strain",
+      "member": 49,
+      "unit": "strain"
+    },
+    {
+      "id": "SG51",
+      "kind": "strain",
+      "member": 50,
+      "unit": "strain"
+    },
+    {
+      "id": "SG52",
+      "kind": "strain",
+      "member": 51,
+      "unit": "strain"
+    },
+    {
+      "id": "SG53",
+      "kind": "strain",
+      "member": 52,
+      "unit": "strain"
+    },
+    {
+      "id": "SG54",
+      "kind": "strain",
+      "member": 53,
+      "unit": "strain"
+    },
+    {
+      "id": "SG55",
+      "kind": "strain",
+      "member": 54,
+      "unit": "strain"
+    },
+    {
+      "id": "SG56",
+      "kind": "strain",
+      "member": 55,
+      "unit": "strain"
+    },
+    {
+      "id": "SG57",
+      "kind": "strain",
+      "member": 56,
+      "unit": "strain"
+    },
+    {
+      "id": "SG58",
+      "kind": "strain",
+      "member": 57,
+      "unit": "strain"
+    },
+    {
+      "id": "SG59",
+      "kind": "strain",
+      "member": 58,
+      "unit": "strain"
+    },
+    {
+      "id": "SG60",
+      "kind": "strain",
+      "member": 59,
+      "unit": "strain"
+    },
+    {
+      "id": "SG61",
+      "kind": "strain",
+      "member": 60,
+      "unit": "strain"
+    },
+    {
+      "id": "SG62",
+      "kind": "strain",
+      "member": 61,
+      "unit": "strain"
+    },
+    {
+      "id": "SG63",
+      "kind": "strain",
+      "member": 62,
+      "unit": "strain"
+    },
+    {
+      "id": "SG64",
+      "kind": "strain",
+      "member": 63,
+      "unit": "strain"
+    },
+    {
+      "id": "SG65",
+      "kind": "strain",
+      "member": 64,
+      "unit": "strain"
+    },
+    {
+      "id": "SG66",
+      "kind": "strain",
+      "member": 65,
+      "unit": "strain"
+    },
+    {
+      "id": "SG67",
+      "kind": "strain",
+      "member": 66,
+      "unit": "strain"
+    },
+    {
+      "id": "SG68",
+      "kind": "strain",
+      "member": 67,
+      "unit": "strain"
+    },
+    {
+      "id": "SG69",
+      "kind": "strain",
+      "member": 68,
+      "unit": "strain"
+    },
+    {
+      "id": "SG70",
+      "kind": "strain",
+      "member": 69,
+      "unit": "strain"
+    },
+    {
+      "id": "SG71",
+      "kind": "strain",
+      "member": 70,
+      "unit": "strain"
+    },
+    {
+      "id": "SG72",
+      "kind": "strain",
+      "member": 71,
+      "unit": "strain"
+    },
+    {
+      "id": "SG73",
+      "kind": "strain",
+      "member": 72,
+      "unit": "strain"
+    },
+    {
+      "id": "SG74",
+      "kind": "strain",
+      "member": 73,
+      "unit": "strain"
+    },
+    {
+      "id": "SG75",
+      "kind": "strain",
+      "member": 74,
+      "unit": "strain"
+    },
+    {
+      "id": "SG76",
+      "kind": "strain",
+      "member": 75,
+      "unit": "strain"
+    },
+    {
+      "id": "SG77",
+      "kind": "strain",
+      "member": 76,
+      "unit": "strain"
+    },
+    {
+      "id": "SG78",
+      "kind": "strain",
+      "member": 77,
+      "unit": "strain"
+    },
+    {
+      "id": "D02X",
+      "kind": "displacement",
+      "node": 1,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D02Z",
+      "kind": "displacement",
+      "node": 1,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D03X",
+      "kind": "displacement",
+      "node": 2,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D03Y",
+      "kind": "displacement",
+      "node": 2,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D03Z",
+      "kind": "displacement",
+      "node": 2,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D04X",
+      "kind": "displacement",
+      "node": 3,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D04Y",
+      "kind": "displacement",
+      "node": 3,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D04Z",
+      "kind": "displacement",
+      "node": 3,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D05X",
+      "kind": "displacement",
+      "node": 4,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D05Y",
+      "kind": "displacement",
+      "node": 4,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D05Z",
+      "kind": "displacement",
+      "node": 4,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D06X",
+      "kind": "displacement",
+      "node": 5,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D06Y",
+      "kind": "displacement",
+      "node": 5,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D06Z",
+      "kind": "displacement",
+      "node": 5,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D07X",
+      "kind": "displacement",
+      "node": 6,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D07Y",
+      "kind": "displacement",
+      "node": 6,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D07Z",
+      "kind": "displacement",
+      "node": 6,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D08X",
+      "kind": "displacement",
+      "node": 7,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D08Y",
+      "kind": "displacement",
+      "node": 7,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D08Z",
+      "kind": "displacement",
+      "node": 7,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D09X",
+      "kind": "displacement",
+      "node": 8,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D09Y",
+      "kind": "displacement",
+      "node": 8,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D09Z",
+      "kind": "displacement",
+      "node": 8,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D10X",
+      "kind": "displacement",
+      "node": 9,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D10Y",
+      "kind": "displacement",
+      "node": 9,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D10Z",
+      "kind": "displacement",
+      "node": 9,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D11X",
+      "kind": "displacement",
+      "node": 10,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D11Y",
+      "kind": "displacement",
+      "node": 10,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D11Z",
+      "kind": "displacement",
+      "node": 10,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D12X",
+      "kind": "displacement",
+      "node": 11,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D12Y",
+      "kind": "displacement",
+      "node": 11,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D12Z",
+      "kind": "displacement",
+      "node": 11,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D13X",
+      "kind": "displacement",
+      "node": 12,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D13Y",
+      "kind": "displacement",
+      "node": 12,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D13Z",
+      "kind": "displacement",
+      "node": 12,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D14X",
+      "kind": "displacement",
+      "node": 13,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D14Y",
+      "kind": "displacement",
+      "node": 13,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D14Z",
+      "kind": "displacement",
+      "node": 13,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D15X",
+      "kind": "displacement",
+      "node": 14,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D15Y",
+      "kind": "displacement",
+      "node": 14,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D15Z",
+      "kind": "displacement",
+      "node": 14,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D16X",
+      "kind": "displacement",
+      "node": 15,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D16Y",
+      "kind": "displacement",
+      "node": 15,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D16Z",
+      "kind": "displacement",
+      "node": 15,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D17X",
+      "kind": "displacement",
+      "node": 16,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D18X",
+      "kind": "displacement",
+      "node": 17,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D18Z",
+      "kind": "displacement",
+      "node": 17,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D19X",
+      "kind": "displacement",
+      "node": 18,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D19Y",
+      "kind": "displacement",
+      "node": 18,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D19Z",
+      "kind": "displacement",
+      "node": 18,
+      "axis": 2,
+      "unit": "m"
+    },
+    {
+      "id": "D20X",
+      "kind": "displacement",
+      "node": 19,
+      "axis": 0,
+      "unit": "m"
+    },
+    {
+      "id": "D20Y",
+      "kind": "displacement",
+      "node": 19,
+      "axis": 1,
+      "unit": "m"
+    },
+    {
+      "id": "D20Z",
+      "kind": "displacement",
+      "node": 19,
+      "axis": 2,
+      "unit": "m"
+    }
+  ]
+}

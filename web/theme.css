@@ -1,0 +1,76 @@
+/* Shared interface: neutral chrome and Arial; data plots have dedicated colors. */
+:root{color-scheme:light;--bg:#f5f5f5;--paper:#ffffff;--panel:#ffffff;--line:#d9d9d9;--text:#111111;--muted:#555555;--teal:#111111;--purple:#444444;--amber:#555555;--red:#111111;--unbraced:#111111;--x:#444444;--chevron:#666666}
+html{font-family:Arial,Helvetica,sans-serif}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+button,input,select,textarea,table,code,kbd,summary,svg text{font-family:Arial,Helvetica,sans-serif}
+h1,h2,h3,h4{font-family:Arial,Helvetica,sans-serif;color:var(--text)}
+h1{font-weight:600;letter-spacing:-.7px}h2,h3{font-weight:600}
+a{color:var(--text);text-underline-offset:3px}a:hover{text-decoration:underline}
+.primary{color:#ffffff;background:#111111;border-color:#111111}.primary:hover{background:#333333;border-color:#333333}
+.secondary{color:#111111;background:#ffffff;border-color:#b8b8b8}.secondary:hover{background:#eeeeee;border-color:#777777}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #111111;outline-offset:3px}
+input,select,textarea{color:#111111;background:#ffffff;border-color:#b8b8b8;accent-color:#111111}
+input[type=checkbox],input[type=range]{accent-color:#111111}
+.rail{background:#ffffff}.brand,.brand svg{color:#111111;stroke:#111111}.nav.active{background:#eeeeee;color:#111111;box-shadow:inset 2px 0 #111111}.nav:hover{background:#f2f2f2;color:#111111}
+.panel,.canvas-wrap{background:#ffffff}.panel-heading h2{color:#111111}.panel-heading p,.note{color:#555555}
+.segmented button.active{color:#111111;border-bottom-color:#111111}.segmented button:hover{color:#111111}
+.eyebrow,.figure-number,.rail-label{color:#555555}.pill,.version,.breadcrumb,.workspace-caption{color:#555555}
+.support-review{margin:18px 0}.support-review summary{padding:15px 18px;font-size:13px;font-weight:600}.support-review p{padding:0 18px;font-size:12px;line-height:1.6;color:#555555}.support-review table{width:100%;border-collapse:collapse;font-size:12px;white-space:nowrap}.support-review th,.support-review td{padding:10px 16px;text-align:left;border-top:1px solid var(--line)}.support-review th{font-size:11px;font-weight:600;background:#f5f5f5}
+.legend .x:before{border-top-style:dashed}.legend .chevron:before{border-top-style:dotted}
+.benchmark-pass,.benchmark-stale{color:#111111!important}.brand span,.brand small{font-family:Arial,Helvetica,sans-serif}
+
+.table-scroll{overflow-x:auto;max-width:100%}
+
+/* Give the member inspector one continuous card boundary and inset dividers. */
+.panel.inspector{display:flex;flex-direction:column;gap:0;margin:0;padding:0;background:#fff;border:1px solid #d4d4d4;border-radius:8px;overflow:hidden;box-shadow:0 2px 7px #00000005}
+.inspector>.panel-heading{padding:17px 20px;border-bottom:1px solid #e5e5e5;background:#fafafa}
+.inspector>.panel-heading h2{font-size:12px;font-weight:600}
+.inspector .tiny-pill{font-size:8px;letter-spacing:1px}
+.inspector>.member-identity{padding:20px;gap:12px}
+.inspector .member-glyph{width:40px;height:40px;flex-shrink:0;background:#fafafa;border:1px solid #dedede;border-radius:6px}
+.inspector .member-identity h3{font-size:28px;line-height:1.2}
+.inspector .badge{padding:6px 8px;border:1px solid #e3e3e3;border-radius:4px;background:#f5f5f5;white-space:nowrap}
+.inspector>.inspector-group{margin:0 20px;padding:20px 0;border-top:1px solid #e5e5e5}
+.inspector .section-label{margin-bottom:16px;font-size:9px;letter-spacing:1px;line-height:1.5}
+.inspector dl>div{font-size:11px;line-height:1.6;margin-bottom:12px;gap:12px}
+.inspector dl>div:last-child{margin-bottom:0}
+.inspector dd{font-size:11px;flex-shrink:0}
+.inspector .stress-bar{margin-top:16px;height:3px}
+.inspector .control-hint{margin:11px 0 0;font-size:10px;line-height:1.7;color:#555}
+.inspector>.comparison{margin:0 20px;padding:16px 0;border-top:1px solid #e5e5e5;font-size:10px;line-height:1.6;gap:12px;align-items:baseline}
+.inspector>.prediction-card{margin:0 20px 20px}
+.inspector>.inspector-note{margin:0;padding:16px 20px;border-top:1px solid #e5e5e5;background:#fafafa;font-size:10px;line-height:1.8;color:#555}
+
+/* Color belongs to plotted data and legend swatches, while labels stay neutral. */
+.bridge-comparison-legend .healthy i{border-top-color:#2563eb}
+.bridge-comparison-legend .current i{border-top-color:#c65b13}
+.legend .unbraced:before{border-top-color:#2563eb}
+.legend .x:before{border-top-color:#c65b13}
+.legend .chevron:before{border-top-color:#007f65}
+
+/* One card treatment across the viewer, inspector, charts and seismic results. */
+:root{--card-border:#d6d6d6;--card-divider:#e7e7e7;--card-radius:8px}
+.panel{border:1px solid var(--card-border);border-radius:var(--card-radius);box-shadow:none}
+.panel>.panel-heading{border-bottom:1px solid var(--card-divider);background:#ffffff}
+.panel.inspector{border-color:var(--card-border);border-radius:var(--card-radius);box-shadow:none;min-width:0}
+.inspector>.panel-heading{min-height:58px;background:#ffffff;padding:16px 20px}
+.inspector>.panel-heading h2{font-size:13px;line-height:1.4}
+.inspector>.panel-heading .tiny-pill{padding:4px 7px;border:1px solid var(--card-divider);border-radius:4px;background:#fafafa;font-size:8px;letter-spacing:.8px;line-height:1.4}
+.inspector>.member-identity{padding:20px;min-width:0}
+.inspector .member-glyph{background:#ffffff}
+.inspector .member-identity h3{margin:0 0 4px;font-weight:500}
+.inspector>.inspector-group,.inspector>.comparison{border-top-color:var(--card-divider)}
+.inspector dl>div,.inspector dd{font-size:12px}
+.inspector dt{min-width:0;overflow-wrap:anywhere}
+.inspector>.inspector-note{border-top-color:var(--card-divider);font-size:11px;padding:16px 20px}
+.inspector>.comparison strong{font-weight:600;white-space:nowrap}
+.inspector>.prediction-card{border-color:var(--card-divider);border-radius:6px}
+@media(max-width:420px){.inspector>.panel-heading,.inspector>.member-identity,.inspector>.inspector-note{padding-left:16px;padding-right:16px}.inspector>.inspector-group,.inspector>.comparison{margin-left:16px;margin-right:16px}.inspector>.prediction-card{margin-left:16px;margin-right:16px}.inspector dl>div,.inspector dd{font-size:11px}}
+
+/* The card, rather than the page width, controls technical reading columns. */
+.panel.inspector{container-type:inline-size}
+.inspector-details{display:grid;grid-template-columns:minmax(0,1fr);margin:0 20px;border-top:1px solid var(--card-divider)}
+.inspector-details>.inspector-group{grid-row:auto;grid-column:auto;min-width:0;margin:0;padding:20px 0;border:0}
+.inspector-details>.inspector-group+.inspector-group{border-top:1px solid var(--card-divider)}
+@container(min-width:500px){.inspector-details{grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:24px}.inspector-details>.inspector-group+.inspector-group{border-top:0;border-left:1px solid var(--card-divider);padding-left:24px}}
+@media(max-width:420px){.inspector-details{margin-left:16px;margin-right:16px}}

@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: stratum-structural-twin
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    envVars:
+      - key: PORT
+        value: "10000"

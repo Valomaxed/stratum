@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "method": "noise-aware-sparse-v1",
+  "frozen_at": "2026-10-25T16:03:16.119113+00:00",
+  "validation_seed": 31027,
+  "validation_cases": 120,
+  "settings": {
+    "single": {
+      "penalty": 4.0,
+      "sensor_signature": "cf009615ec3d8c8e6acbbfb140f637fc18d05d709bd7f08f3a56aa1fa20a1a0a",
+      "forest_sha256": "ea7e95c9f6c2e777be563c92e14ec6622ed3d585f426af20f604e50483db6492"
+    },
+    "multi": {
+      "penalty": 2.0,
+      "sensor_signature": "728511ac86837c80a7a2c42ee03ae61df491c998ce977016aa60e8b292125441",
+      "forest_sha256": "bf9d21cf795fee7e397ad6c4b6d766562f8b7e7b66ee8fa8b78fa32c394f08cb"
+    }
+  },
+  "selection_rule": "Maximize mean exact location over 12 validation cells, subject to mean healthy false-alarm rate <=5%; if infeasible minimize false alarms",
+  "limits": "Known noise standard deviation; common normalized bias; zero/one/two damage family; pair search restricted to six best single-member residual fits",
+  "penalty_candidates": [
+    0.5,
+    1.0,
+    2.0,
+    4.0,
+    8.0
+  ],
+  "detection_threshold": 0.05,
+  "noise_floor": 0.0001,
+  "max_damaged_members": 2
+}

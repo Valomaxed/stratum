@@ -1,0 +1,5 @@
+# Optional, isolated Windows Python 3.12 environment; not an app dependency.
+openseespy==3.8.0.0
+numpy==2.5.4
+scipy==1.18.1
+matplotlib==3.11.2

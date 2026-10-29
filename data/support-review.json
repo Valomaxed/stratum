@@ -1,0 +1,370 @@
+{
+  "generated_utc": "2026-10-29T17:16:14.145716+00:00",
+  "trusses": [
+    {
+      "model": "planar",
+      "restraints": [
+        {
+          "node": 0,
+          "type": "pin",
+          "axes": [
+            "X",
+            "Y"
+          ],
+          "free_axes": []
+        },
+        {
+          "node": 4,
+          "type": "roller",
+          "axes": [
+            "Y"
+          ],
+          "free_axes": [
+            "X"
+          ]
+        }
+      ],
+      "restrained_dofs": 3,
+      "free_dofs": 17,
+      "rigid_restraint_rank": 3,
+      "minimum_free_stiffness_eigenvalue_n_m": 2777751.5716221523,
+      "expansion_constraint_error_m": 0.0,
+      "modal_relative_error": 1.0399777164067571e-15,
+      "cases": [
+        {
+          "case": "LC1",
+          "damaged": false,
+          "force_error_n": 9.458744898438454e-10,
+          "moment_error_nm": 1.091682472714828e-08,
+          "joint_error_n": 4.783942131325603e-10,
+          "free_reaction_error_n": 4.3655745685100555e-10,
+          "energy_relative_error": 0.0
+        },
+        {
+          "case": "LC2",
+          "damaged": false,
+          "force_error_n": 6.548361852765083e-10,
+          "moment_error_nm": 5.587935447692871e-09,
+          "joint_error_n": 2.928572939708829e-10,
+          "free_reaction_error_n": 2.3283064365386963e-10,
+          "energy_relative_error": 5.569795684510202e-16
+        },
+        {
+          "case": "LC3",
+          "damaged": false,
+          "force_error_n": 7.8580342233181e-10,
+          "moment_error_nm": 7.8580342233181e-10,
+          "joint_error_n": 1.673470251262188e-10,
+          "free_reaction_error_n": 2.3283064365386963e-10,
+          "energy_relative_error": 4.962236869894783e-15
+        },
+        {
+          "case": "LC1",
+          "damaged": true,
+          "force_error_n": 9.604264050722122e-10,
+          "moment_error_nm": 1.0433723218739033e-08,
+          "joint_error_n": 3.019522409886122e-10,
+          "free_reaction_error_n": 4.656612873077393e-10,
+          "energy_relative_error": 1.2664821196075346e-15
+        },
+        {
+          "case": "LC2",
+          "damaged": true,
+          "force_error_n": 9.604264050722122e-10,
+          "moment_error_nm": 6.05359673500061e-09,
+          "joint_error_n": 2.510205376893282e-10,
+          "free_reaction_error_n": 4.656612873077393e-10,
+          "energy_relative_error": 8.575379851955979e-16
+        },
+        {
+          "case": "LC3",
+          "damaged": true,
+          "force_error_n": 7.275957614183426e-10,
+          "moment_error_nm": 1.3096723705530167e-09,
+          "joint_error_n": 2.3283064365386963e-10,
+          "free_reaction_error_n": 2.3283064365386963e-10,
+          "energy_relative_error": 1.4737567511226736e-15
+        }
+      ]
+    },
+    {
+      "model": "space",
+      "restraints": [
+        {
+          "node": 0,
+          "type": "pin",
+          "axes": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "free_axes": []
+        },
+        {
+          "node": 1,
+          "type": "roller",
+          "axes": [
+            "X",
+            "Y"
+          ],
+          "free_axes": [
+            "Z"
+          ]
+        },
+        {
+          "node": 16,
+          "type": "roller",
+          "axes": [
+            "Y"
+          ],
+          "free_axes": [
+            "X",
+            "Z"
+          ]
+        }
+      ],
+      "restrained_dofs": 6,
+      "free_dofs": 54,
+      "rigid_restraint_rank": 6,
+      "minimum_free_stiffness_eigenvalue_n_m": 273757.1429537712,
+      "expansion_constraint_error_m": 0.0,
+      "modal_relative_error": 9.405044419379236e-16,
+      "cases": [
+        {
+          "case": "LC1",
+          "damaged": false,
+          "force_error_n": 1.4406396076083183e-09,
+          "moment_error_nm": 1.7491402104496956e-08,
+          "joint_error_n": 3.815330273937434e-10,
+          "free_reaction_error_n": 3.4924596548080444e-10,
+          "energy_relative_error": 9.51208637951815e-15
+        },
+        {
+          "case": "LC2",
+          "damaged": false,
+          "force_error_n": 8.585629984736443e-10,
+          "moment_error_nm": 2.648448571562767e-09,
+          "joint_error_n": 2.701199264265597e-10,
+          "free_reaction_error_n": 3.2014213502407074e-10,
+          "energy_relative_error": 4.639784368922371e-15
+        },
+        {
+          "case": "LC3",
+          "damaged": false,
+          "force_error_n": 2.2992026060819626e-09,
+          "moment_error_nm": 4.062894731760025e-08,
+          "joint_error_n": 8.585629984736443e-10,
+          "free_reaction_error_n": 1.862645149230957e-09,
+          "energy_relative_error": 8.917997486593612e-14
+        },
+        {
+          "case": "LC1",
+          "damaged": true,
+          "force_error_n": 1.6152625903487206e-09,
+          "moment_error_nm": 1.9528670236468315e-08,
+          "joint_error_n": 3.1377567211166024e-10,
+          "free_reaction_error_n": 3.4924596548080444e-10,
+          "energy_relative_error": 7.430886166073141e-15
+        },
+        {
+          "case": "LC2",
+          "damaged": true,
+          "force_error_n": 1.0913936421275139e-09,
+          "moment_error_nm": 4.94765117764473e-09,
+          "joint_error_n": 2.3919710656628013e-10,
+          "free_reaction_error_n": 3.4924596548080444e-10,
+          "energy_relative_error": 2.7072870768086403e-15
+        },
+        {
+          "case": "LC3",
+          "damaged": true,
+          "force_error_n": 4.6566128730773926e-09,
+          "moment_error_nm": 9.4645656645298e-08,
+          "joint_error_n": 2.9926923161838204e-09,
+          "free_reaction_error_n": 1.862645149230957e-09,
+          "energy_relative_error": 3.198133376834774e-14
+        }
+      ]
+    },
+    {
+      "model": "bridge",
+      "restraints": [
+        {
+          "node": 0,
+          "type": "pin",
+          "axes": [
+            "X",
+            "Y",
+            "Z"
+          ],
+          "free_axes": [],
+          "bearing_kind": "Fixed"
+        },
+        {
+          "node": 1,
+          "type": "roller",
+          "axes": [
+            "Y"
+          ],
+          "free_axes": [
+            "X",
+            "Z"
+          ],
+          "bearing_kind": "Free expansion"
+        },
+        {
+          "node": 16,
+          "type": "roller",
+          "axes": [
+            "Y",
+            "Z"
+          ],
+          "free_axes": [
+            "X"
+          ],
+          "bearing_kind": "Guided expansion"
+        },
+        {
+          "node": 17,
+          "type": "roller",
+          "axes": [
+            "Y"
+          ],
+          "free_axes": [
+            "X",
+            "Z"
+          ],
+          "bearing_kind": "Free expansion"
+        }
+      ],
+      "restrained_dofs": 7,
+      "free_dofs": 53,
+      "rigid_restraint_rank": 6,
+      "minimum_free_stiffness_eigenvalue_n_m": 3064416.4727300834,
+      "expansion_constraint_error_m": 0.0,
+      "modal_relative_error": 1.487800514739397e-15,
+      "cases": [
+        {
+          "case": "LC1",
+          "damaged": false,
+          "force_error_n": 9.604264050722122e-10,
+          "moment_error_nm": 1.0477378964424133e-08,
+          "joint_error_n": 2.6193447411060333e-10,
+          "free_reaction_error_n": 2.9103830456733704e-10,
+          "energy_relative_error": 5.647505679593792e-16
+        },
+        {
+          "case": "LC2",
+          "damaged": false,
+          "force_error_n": 2.473825588822365e-09,
+          "moment_error_nm": 3.3760443329811096e-09,
+          "joint_error_n": 4.220055416226387e-10,
+          "free_reaction_error_n": 3.537934389896691e-10,
+          "energy_relative_error": 8.696309203206296e-16
+        },
+        {
+          "case": "LC3",
+          "damaged": false,
+          "force_error_n": 8.076312951743603e-10,
+          "moment_error_nm": 8.498318493366241e-09,
+          "joint_error_n": 2.1100277081131935e-10,
+          "free_reaction_error_n": 5.19321474712342e-10,
+          "energy_relative_error": 7.331216532478031e-16
+        },
+        {
+          "case": "LC1",
+          "damaged": true,
+          "force_error_n": 9.74978320300579e-10,
+          "moment_error_nm": 9.778887033462524e-09,
+          "joint_error_n": 3.346940502524376e-10,
+          "free_reaction_error_n": 4.5838532969355583e-10,
+          "energy_relative_error": 1.4761510462844939e-15
+        },
+        {
+          "case": "LC2",
+          "damaged": true,
+          "force_error_n": 1.8044374883174896e-09,
+          "moment_error_nm": 1.3737007975578308e-08,
+          "joint_error_n": 3.92901711165905e-10,
+          "free_reaction_error_n": 5.820766091346741e-10,
+          "energy_relative_error": 6.383746214608713e-16
+        },
+        {
+          "case": "LC3",
+          "damaged": true,
+          "force_error_n": 9.968061931431293e-10,
+          "moment_error_nm": 7.62520357966423e-09,
+          "joint_error_n": 2.2464519133791327e-10,
+          "free_reaction_error_n": 5.748006515204906e-10,
+          "energy_relative_error": 1.080660052212576e-15
+        }
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "system": "unbraced",
+      "fixed_column_base_nodes": [
+        0,
+        2
+      ],
+      "blocked_dofs": [
+        "UX",
+        "UY",
+        "RZ"
+      ],
+      "base_constraint_error": 0.0,
+      "massless_dof_equilibrium_error": 5.820766091346741e-11,
+      "base_shear_error_n": 5.911715561524034e-10,
+      "global_moment_error_nm": 1.1932570487260818e-09
+    },
+    {
+      "system": "x",
+      "fixed_column_base_nodes": [
+        0,
+        2
+      ],
+      "blocked_dofs": [
+        "UX",
+        "UY",
+        "RZ"
+      ],
+      "base_constraint_error": 0.0,
+      "massless_dof_equilibrium_error": 3.4924596548080444e-10,
+      "base_shear_error_n": 1.6443664208054543e-09,
+      "global_moment_error_nm": 4.540197551250458e-09
+    },
+    {
+      "system": "chevron",
+      "fixed_column_base_nodes": [
+        0,
+        2
+      ],
+      "blocked_dofs": [
+        "UX",
+        "UY",
+        "RZ"
+      ],
+      "base_constraint_error": 0.0,
+      "massless_dof_equilibrium_error": 6.984919309616089e-10,
+      "base_shear_error_n": 1.4551915228366852e-10,
+      "global_moment_error_nm": 1.4006218407303095e-08
+    }
+  ],
+  "bridge_dynamic": {
+    "speed_kmh": 72,
+    "free_equilibrium_error_n": 5.668553058058023e-07,
+    "vertical_balance_error_kn": 2.4700241851860483e-12,
+    "integration_relative_residual": 4.944686205612476e-12
+  },
+  "source_sha256": {
+    "twin/fem.py": "395e9e86551bb967cc36a6a368055eecd068f12f9817c2b213b0a66d8cb2973d",
+    "twin/bridge.py": "04a26296e0de6759970221777bbf939131d595e28e023b5e7d04e69f7ed33a2e",
+    "twin/bridge_dynamics.py": "d6d0a63f13192a1cdc3fbf3746af571f64b854d1c7ab3cc17c73176829a84c5c",
+    "twin/models.py": "444ec04c96be3fcf6373af8c2ca07f3f13e580e28dce4be4114bef2307cd74d0",
+    "twin/dynamics.py": "9a5ad9311f140a380bb0a8fd48e82864041c0b271799d0b09762cd2dbdfb663c",
+    "twin/seismic.py": "5dba288bc678b18c8fb3eaea05e137a854c121b6a78bb97e7e695c7547c95810",
+    "twin/support_audit.py": "6f8bbed76ca29ed3aa762e3660f3872a7719bf2a12b201f731c1adfb0670baab"
+  },
+  "passed": true
+}

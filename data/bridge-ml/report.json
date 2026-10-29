@@ -1,0 +1,476 @@
+{
+  "version": "bridge-dynamic-full-array-v1",
+  "contract": "73dc0532aeaa420ae6d6fc7aa1605dedcf696a2767f7c0d62d1c34df4e1a28be",
+  "forest_sha256": "e66534b24a0b8a0773b6d121b5bd0dc1530cfee97e60ad99245d07fda1ec6c10",
+  "seed": 281026,
+  "cases": 3520,
+  "distinct_structural_scenarios": 3121,
+  "healthy_noise_replicates": 400,
+  "train_cases": 2464,
+  "validation_cases": 528,
+  "test_cases": 528,
+  "augmented_training_packets": 7392,
+  "physical_channels": 131,
+  "phase_samples": 20,
+  "feature_count": 2882,
+  "speed_kmh": 36,
+  "damping_ratio": 0.02,
+  "settings": {
+    "front_axle_kn": 80.0,
+    "rear_axle_kn": 120.0,
+    "axle_spacing_m": 4.0,
+    "lane_offset_m": 0.0,
+    "deck_load_kn_m": 10.0
+  },
+  "severity_range": [
+    0.08,
+    0.65
+  ],
+  "damage_family": "Healthy or one damaged axial member. Multiple damage and member removal are not validated.",
+  "sensor_scope": "Full 78 strain + 53 free-displacement channels; complete crossing plus 2 s tail. Independent Gaussian sample noise relative to healthy per-type peak scale; no dropout or drift.",
+  "selection": {
+    "threshold": 0.2,
+    "accuracy": 0.9356060606060606,
+    "damaged_location_accuracy": 0.9273504273504274,
+    "healthy_false_alarm_rate": 0.0,
+    "coverage": 1.0,
+    "accuracy_when_accepted": 0.9356060606060606,
+    "damaged_severity_mae_pp": 5.371943851402842,
+    "correct_location_severity_mae_pp": 4.692659166531574
+  },
+  "experiments": [
+    {
+      "condition": "clean",
+      "noise_fraction": 0,
+      "accuracy": 1.0,
+      "damaged_location_accuracy": 1.0,
+      "healthy_false_alarm_rate": 0.0,
+      "coverage": 1.0,
+      "accuracy_when_accepted": 1.0,
+      "damaged_severity_mae_pp": 0.8028729080253628,
+      "correct_location_severity_mae_pp": 0.8028729080253628
+    },
+    {
+      "condition": "noise_0_5_pct",
+      "noise_fraction": 0.005,
+      "accuracy": 0.9261363636363636,
+      "damaged_location_accuracy": 0.9166666666666666,
+      "healthy_false_alarm_rate": 0.0,
+      "coverage": 1.0,
+      "accuracy_when_accepted": 0.9261363636363636,
+      "damaged_severity_mae_pp": 5.182266208817496,
+      "correct_location_severity_mae_pp": 4.497332229418034
+    },
+    {
+      "condition": "noise_1_pct",
+      "noise_fraction": 0.01,
+      "accuracy": 0.9242424242424242,
+      "damaged_location_accuracy": 0.9145299145299145,
+      "healthy_false_alarm_rate": 0.0,
+      "coverage": 0.9981060606060606,
+      "accuracy_when_accepted": 0.9259962049335864,
+      "damaged_severity_mae_pp": 7.862687263599279,
+      "correct_location_severity_mae_pp": 7.193434922400978
+    }
+  ],
+  "per_member_noisy": [
+    {
+      "member": "M01",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M02",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M03",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M04",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M05",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M06",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M07",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M08",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M09",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M10",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M11",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M12",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M13",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M14",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M15",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M16",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M17",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M18",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M19",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M20",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M21",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M22",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M23",
+      "cases": 6,
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "member": "M24",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M25",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M26",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M27",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M28",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M29",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M30",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M31",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M32",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M33",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M34",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M35",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M36",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M37",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M38",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M39",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M40",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M41",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M42",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M43",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M44",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M45",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M46",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M47",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M48",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M49",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M50",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M51",
+      "cases": 6,
+      "accuracy": 0.16666666666666666
+    },
+    {
+      "member": "M52",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M53",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M54",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M55",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M56",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M57",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M58",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M59",
+      "cases": 6,
+      "accuracy": 0.3333333333333333
+    },
+    {
+      "member": "M60",
+      "cases": 6,
+      "accuracy": 0.5
+    },
+    {
+      "member": "M61",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M62",
+      "cases": 6,
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "member": "M63",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M64",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M65",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M66",
+      "cases": 6,
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "member": "M67",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M68",
+      "cases": 6,
+      "accuracy": 0.3333333333333333
+    },
+    {
+      "member": "M69",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M70",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M71",
+      "cases": 6,
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "member": "M72",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    },
+    {
+      "member": "M73",
+      "cases": 6,
+      "accuracy": 0.6666666666666666
+    },
+    {
+      "member": "M74",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M75",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M76",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M77",
+      "cases": 6,
+      "accuracy": 1.0
+    },
+    {
+      "member": "M78",
+      "cases": 6,
+      "accuracy": 0.8333333333333334
+    }
+  ],
+  "elapsed_seconds": 682.5399380999997,
+  "limitations": [
+    "Same FEM for training and test; no hardware or cross-geometry validation.",
+    "Forest class votes are uncalibrated, not damage probabilities.",
+    "Accuracy counts abstentions as failures. Severity error assigns zero at a true damaged member when the member is missed or rejected.",
+    "Healthy cases are independent noise replicates of a single structural state; class/severity scenarios split before augmentation.",
+    "Fixed supports, materials, deck mass, axles, lane, speed and damping; load multiplier cancels by known linear normalization."
+  ]
+}
