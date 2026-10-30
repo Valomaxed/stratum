@@ -19,5 +19,7 @@ jobs:
       - name: Core numerical and service checks
         run: python -m unittest tests.test_fem tests.test_space tests.test_bridge tests.test_bridge_dynamics tests.test_playback tests.test_pipeline tests.test_load_cases tests.test_robust tests.test_bridge_learning tests.test_bridge_sparse tests.test_support_audit -v
       - run: node --test tests/bridge-playback.test.cjs
+      - name: Reproduce reviewer example
+        run: python examples/quick_review.py
       - name: JavaScript syntax
         run: for file in web/*.js; do node --check "$file"; done

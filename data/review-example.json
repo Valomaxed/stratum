@@ -1,0 +1,33 @@
+{
+  "example": "Static FEM comparison; configured damage is known input",
+  "settings": {
+    "vehicle_position_m": 12.0,
+    "front_axle_kn": 80.0,
+    "rear_axle_kn": 120.0,
+    "axle_spacing_m": 4.0,
+    "lane_offset_m": 0.0,
+    "deck_load_kn_m": 10.0,
+    "wind_total_kn": 50.0
+  },
+  "rows": [
+    {
+      "configuration": "Healthy",
+      "peak_displacement_mm": 11.107774295040944,
+      "deck_down_mm": 10.895659556771575,
+      "first_frequency_hz": 6.178265989009249,
+      "M05_axial_force_kn": -114.72189603751953,
+      "global_force_balance_error_n": 2.5626688106716414e-09,
+      "global_moment_balance_error_nm": 3.830333886150362e-09
+    },
+    {
+      "configuration": "M05 stiffness loss 40%",
+      "peak_displacement_mm": 11.339700917625079,
+      "deck_down_mm": 11.161761092541585,
+      "first_frequency_hz": 6.157373446404663,
+      "M05_axial_force_kn": -92.22657323980506,
+      "global_force_balance_error_n": 2.0307859933529418e-09,
+      "global_moment_balance_error_nm": 7.219551298133919e-09
+    }
+  ],
+  "scope": "Linear axial truss. This example performs no ML inference or capacity assessment."
+}

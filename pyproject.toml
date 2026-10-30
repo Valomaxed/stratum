@@ -5,6 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "structural-twin"
 version = "0.1.0"
+authors = [{ name = "Atharv Sharma" }]
 description = "Structural digital twin for trusses, bridges, sensing and damage estimation"
 readme = "README.md"
 requires-python = ">=3.10"

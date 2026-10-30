@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this research software, please cite the repository and the specific commit used."
+type: software
+title: "STRATUM: Structural Digital Twin for Trusses and Bridges"
+authors:
+  - family-names: Sharma
+    given-names: Atharv
+version: 0.1.0
+repository-code: "https://github.com/Valomaxed/stratum"

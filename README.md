@@ -1,31 +1,63 @@
 # STRATUM
 
-**Structural digital twin for trusses and bridges.**
+**FEM-based damage estimation and sparse sensing in truss bridges**
+
+**Author: [Atharv Sharma](AUTHORS.md)** · Research software portfolio
 
 [![Tests](https://github.com/Valomaxed/stratum/actions/workflows/tests.yml/badge.svg)](https://github.com/Valomaxed/stratum/actions/workflows/tests.yml)
-![Stage: research prototype](https://img.shields.io/badge/stage-research%20prototype-555555)
 
-Combine linear FEM, virtual structural sensing, scoped machine learning and interactive 3D visualization to study structural damage.
+**Academic review:** [Start here](START_HERE.md) · [Results](docs/RESULTS.md) · [Reproduce](docs/REPRODUCIBILITY.md) · [Architecture](docs/ARCHITECTURE.md)
 
-![Dynamic bridge response comparison](data/colored-graphs-preview.jpg)
+Private repository: arrange access before sharing the CV link. [Reviewer access](docs/REVIEWER_ACCESS.md).
 
-## Two focused projects
+## Research question
 
-| Project | Purpose |
+How much damage-location and stiffness-loss information can be recovered from fewer structural-response channels in a simulated truss bridge?
+
+STRATUM connects an implemented axial-truss FEM solver, prescribed moving-force dynamics, virtual strain/displacement sensing, random-forest estimators and an interactive 3D browser viewer. The study examines sensor-budget/accuracy trade-offs under a declared synthetic acquisition protocol.
+
+## Implemented work
+
+| Component | Implementation and review evidence |
 |---|---|
-| **This repository** | Planar/spatial trusses, bridge loading, virtual sensing and damage estimation |
-| [STRATUM Seismic](https://github.com/Valomaxed/stratum-seismic) | Unbraced/X-braced/chevron frames under earthquake acceleration |
+| Structural mechanics | [2D/3D axial FEM](twin/fem.py), [bridge supports and axle transfer](twin/bridge.py), response and modal recovery |
+| Dynamic acquisition | [Moving-force response](twin/bridge_dynamics.py), damping and complete-crossing channel histories |
+| Damage estimation | [Scoped bridge RF pipeline](twin/bridge_learning.py); separate planar RF/physics inverse methods |
+| Sparse experiment | [Selected-only features and paired placement study](twin/bridge_sparse.py) across five budgets |
+| Interface | [Browser workspace](web/) with member inspection, load/deformation playback and exports; optional [Unity static viewer](unity/README.md) |
+| Verification | [Analytical, balance, independent ODE and convergence checks](tests/); [support audit](data/support-review.md) |
 
-The seismic application is an independent project. [Migration and original combined snapshot](docs/REPOSITORY_SPLIT.md).
+NumPy/SciPy provide linear algebra and scikit-learn provides the random forests. Structural assembly, load transfer, acquisition/evaluation and visualization are implemented around those libraries. [Suggested source review route](START_HERE.md).
 
-## Capabilities
+## Main finding: a sensor-budget trade-off
 
-- **FEM:** displacement, reactions, axial forces, stress, strain, strain energy and vibration modes.
-- **Bridge analysis:** four-bearing 24 m truss, dead/vehicle/wind cases, vehicle-position envelopes and dynamic moving-force crossings.
-- **Interactive viewer:** orbit, zoom, select members, inspect response, animate deformation and compare healthy/configured bridges.
-- **Damage estimation:** planar RF/physics inverse methods and separately trained dynamic bridge classifiers/regressors.
-- **Sparse sensing:** paired 131/50/20/10/5-channel experiments with guided and fixed random placement.
-- **Optional clients:** Unity static viewer and a Python bridge for calibrated external sensor packets.
+Saved results on the same **528 held-out synthetic cases** at **0.5% sensor noise**:
+
+| Channels | Guided location accuracy | Fixed random accuracy | Guided damaged severity MAE (pp) |
+|---|---:|---:|---:|
+| 131 | 92.61% | 92.61% | 5.18 |
+| 50 | 88.26% | 88.07% | 6.34 |
+| 20 | 74.05% | 77.84% | 12.29 |
+| 10 | 59.28% | 59.09% | 16.59 |
+| 5 | 45.08% | 39.77% | 21.41 |
+
+![Sparse-sensor results](data/bridge-sparse/review-summary.png)
+
+Fifty guided channels reduce channel count by **61.8%**, giving **88.26%** location accuracy versus **92.61%** for the full array. Only 131 guided channels met the predefined validation qualification rule. Guided placement did not outperform the single fixed random comparator at every budget.
+
+Abstentions count as errors. End-to-end severity MAE includes missed/wrong locations; `pp` denotes percentage points of stiffness loss. Coverage, healthy alarms and complete definitions are in [Results](docs/RESULTS.md).
+
+The study uses the same FEM family for training and test, healthy/single-member bridge damage and fixed crossing conditions. Healthy cases are noise replicates of one structural state. These results do not establish physical transfer.
+
+## Fast review without training
+
+After installing requirements.txt, run from the repository root:
+
+```bash
+python examples/quick_review.py
+```
+
+This compares healthy and configured-damaged static bridge responses and prints engineering values and equilibrium residuals. [Recorded output](data/review-example.json). No trained model or server is required for this example. [Reproduction levels](docs/REPRODUCIBILITY.md).
 
 ## Quick start
 
@@ -97,4 +129,4 @@ Bridge ML is validated on synthetic healthy/single-member loss cases within its 
 
 ## Documentation and contributions
 
-[Architecture](docs/ARCHITECTURE.md) · [Research](docs/RESEARCH.md) · [Support audit](data/support-review.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Issues](https://github.com/Valomaxed/stratum/issues)
+[Academic review](START_HERE.md) · [Results](docs/RESULTS.md) · [Reproduce](docs/REPRODUCIBILITY.md) · [Authorship](AUTHORS.md) · [Citation](CITATION.cff) · [Architecture](docs/ARCHITECTURE.md) · [Research](docs/RESEARCH.md) · [Support audit](data/support-review.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Issues](https://github.com/Valomaxed/stratum/issues)
