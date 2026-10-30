@@ -99,6 +99,8 @@ class LoadCaseTests(unittest.TestCase):
 
     @unittest.skipUnless((STUDY/"report.json").exists(),"Run the paired study first")
     def test_saved_study_preserves_case_split_and_metric_pairing(self):
+        if not all((STUDY/name).is_file() for name in ('dataset.npz', 'predictions.npz')):
+            self.skipTest('Regenerate the excluded paired-study datasets to audit raw metrics')
         report=json.loads((STUDY/"report.json").read_text())
         with np.load(STUDY/"dataset.npz") as dataset,np.load(STUDY/"predictions.npz") as predictions:
             self.assertFalse(set(dataset["train_ids"])&set(dataset["test_ids"]))

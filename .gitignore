@@ -36,3 +36,6 @@ data/**/*.csv
 unity/Build/
 unity/Builds/
 unity/MemoryCaptures/
+
+# Separate repositories live here locally; they are never nested in this repo.
+/projects/

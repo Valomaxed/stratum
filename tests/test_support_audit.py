@@ -9,7 +9,7 @@ class SupportAuditTests(unittest.TestCase):
         self.assertTrue(report['passed'])
         self.assertEqual([m['model'] for m in report['trusses']], ['planar', 'space', 'bridge'])
         self.assertEqual(sum(len(m['cases']) for m in report['trusses']), 18)
-        self.assertEqual(len(report['frames']), 3)
+        self.assertEqual(report['frames'], [])
         self.assertLess(report['bridge_dynamic']['free_equilibrium_error_n'], 1e-5)
 
 

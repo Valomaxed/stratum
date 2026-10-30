@@ -242,24 +242,6 @@ def serve(host="127.0.0.1", port=8766):
                 return self.send_json({"ok": True, "trained": service.estimator.artifact is not None})
             if path == "/api/models":
                 return self.send_json({"models": model_catalog(), "default": "bridge"})
-            if path == '/api/seismic-validation':
-                from .seismic_benchmark import saved_report
-                return self.send_json(saved_report())
-            if path.startswith('/api/seismic-validation/'):
-                from .seismic_benchmark import REPORT_DIR
-                filenames={'report.md':'report.md','comparison.png':'opensees-comparison.png',
-                           'convergence.png':'time-step-convergence.png'}
-                name=filenames.get(path.removeprefix('/api/seismic-validation/'))
-                file=REPORT_DIR/name if name else None
-                if file is None or not file.is_file():
-                    return self.send_json({'error':'Verification artifact not found'},404)
-                body=file.read_bytes()
-                self.send_response(200)
-                self.send_header('Content-Type',mimetypes.guess_type(file.name)[0] or 'text/plain; charset=utf-8')
-                self.send_header('Content-Length',str(len(body)))
-                self.send_header('Cache-Control','no-store')
-                self.end_headers();self.wfile.write(body)
-                return
             if path == "/api/metrics":
                 file = DATA/"metrics.json"
                 return self.send_json(json.loads(file.read_text()) if file.exists() else {"available": False})
@@ -291,7 +273,7 @@ def serve(host="127.0.0.1", port=8766):
             try:
                 path = urlparse(self.path).path
                 size = int(self.headers.get("Content-Length", 0))
-                limit = 2_000_000 if path == '/api/seismic' else 65536
+                limit = 65536
                 if size < 1 or size > limit:
                     raise ValueError(f"Request must be 1..{limit} bytes")
                 request = json.loads(self.rfile.read(size))
@@ -300,9 +282,6 @@ def serve(host="127.0.0.1", port=8766):
                 path = urlparse(self.path).path
                 if path == "/api/analyze":
                     result = service.analyze(request)
-                elif path == '/api/seismic':
-                    from .seismic import compare
-                    result = compare(request)
                 elif path == "/api/bridge-playback":
                     result = service.playback(request)
                 elif path == "/api/observations":

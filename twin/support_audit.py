@@ -7,7 +7,6 @@ import numpy as np
 from .models import FACTORIES, CASE_FACTORIES, describe_model
 from .bridge import bridge_context, vehicle_forces
 from .bridge_dynamics import _history
-from .seismic import build_frame
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -86,26 +85,8 @@ def audit():
     report['bridge_dynamic'] = dict(speed_kmh=72, free_equilibrium_error_n=free_error,
         vertical_balance_error_kn=balance_error, integration_relative_residual=dynamic['relative_residual'])
 
-    for system in ('unbraced', 'x', 'chevron'):
-        frame = build_frame(system=system)
-        u = np.linspace(.001, .007, frame['config']['stories'])
-        full = frame['recovery'] @ u; internal = frame['full_K'] @ full
-        # Base translations/rotations are fixed; unused middle base joint is isolated.
-        assert np.max(np.abs(full[:9])) == 0
-        assert not any(e['a'] == 1 or e['b'] == 1 for e in frame['elements'])
-        force = internal.reshape(-1, 3)
-        secondary_error = float(np.max(np.abs(force[3:, 1:])))
-        base_shear_error = float(abs(force[:3, 0].sum()+sum(frame['K'] @ u)))
-        # Include nodal moments when taking moments about the base origin.
-        moment = frame['nodes'][:, 0]*force[:, 1]-frame['nodes'][:, 1]*force[:, 0]+force[:, 2]
-        moment_error = float(abs(moment.sum()))
-        assert secondary_error < 1e-6 and base_shear_error < 1e-6 and moment_error < 1e-5
-        report['frames'].append(dict(system=system, fixed_column_base_nodes=[0, 2],
-            blocked_dofs=['UX', 'UY', 'RZ'], base_constraint_error=0.,
-            massless_dof_equilibrium_error=secondary_error,
-            base_shear_error_n=base_shear_error, global_moment_error_nm=moment_error))
     sources = ('twin/fem.py', 'twin/bridge.py', 'twin/bridge_dynamics.py', 'twin/models.py',
-               'twin/dynamics.py', 'twin/seismic.py', 'twin/support_audit.py')
+               'twin/dynamics.py', 'twin/support_audit.py')
     report['source_sha256'] = {p: hashlib.sha256((ROOT/p).read_bytes()).hexdigest() for p in sources}
     report['passed'] = True
     return report

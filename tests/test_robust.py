@@ -81,6 +81,8 @@ class RobustTests(unittest.TestCase):
 
     @unittest.skipUnless((ROBUST_DIR/"report.json").exists(),"Run robust-study first")
     def test_api_sparse_mode_noise_assumptions_and_healthy_bias(self):
+        if not (ROBUST_DIR.parent/'load-study/multi.joblib').is_file():
+            self.skipTest('Regenerate the excluded multi-load forest to test trained inference')
         from twin.server import TwinService
         service=TwinService()
         result=service.analyze({"protocol":"multi","physics":True,"refinement":"sparse","noise":0,"drift":.01})
@@ -99,6 +101,8 @@ class RobustTests(unittest.TestCase):
 
     @unittest.skipUnless((ROBUST_DIR/"report.json").exists(),"Run robust-study first")
     def test_audit_preserves_frozen_policy_and_recomputable_metrics(self):
+        if not all((ROBUST_DIR/name).is_file() for name in ('dataset.npz', 'test-predictions.npz')):
+            self.skipTest('Regenerate the excluded robust-study datasets to audit raw metrics')
         report=json.loads((ROBUST_DIR/"report.json").read_text())
         config=json.loads((ROBUST_DIR/"config.json").read_text())
         self.assertEqual(report["frozen_config_sha256"],artifact_digest(ROBUST_DIR/"config.json"))

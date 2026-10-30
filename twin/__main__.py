@@ -8,8 +8,6 @@ def main():
     server = commands.add_parser("serve", help="Start the local viewer and HTTP API")
     server.add_argument("--host", default="127.0.0.1")
     server.add_argument("--port", type=int, default=8766)
-    seismic_verify=commands.add_parser('seismic-verify',help='Run independent OpenSees seismic verification and time-step convergence')
-    seismic_verify.add_argument('--opensees-python',required=True)
     train = commands.add_parser("train", help="Generate synthetic FEM cases and train/evaluate random forests")
     train.add_argument("--samples", type=int, default=2400)
     train.add_argument("--seed", type=int, default=2026)
@@ -36,11 +34,6 @@ def main():
     if args.command == "serve":
         from .server import serve
         serve(args.host, args.port)
-    elif args.command == 'seismic-verify':
-        from .seismic_benchmark import run
-        report=run(args.opensees_python)
-        print(json.dumps({'passed':report['passed'],'report':'data/seismic-validation/report.md'}))
-        if not report['passed']:raise SystemExit(1)
     elif args.command == "train":
         from .learning import train
         print(json.dumps(train(args.samples, args.seed), indent=2))

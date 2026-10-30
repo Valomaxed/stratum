@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-29T17:16:14.145716+00:00",
+  "generated_utc": "2026-10-30T08:31:08.431155+00:00",
   "trusses": [
     {
       "model": "planar",
@@ -301,56 +301,7 @@
       ]
     }
   ],
-  "frames": [
-    {
-      "system": "unbraced",
-      "fixed_column_base_nodes": [
-        0,
-        2
-      ],
-      "blocked_dofs": [
-        "UX",
-        "UY",
-        "RZ"
-      ],
-      "base_constraint_error": 0.0,
-      "massless_dof_equilibrium_error": 5.820766091346741e-11,
-      "base_shear_error_n": 5.911715561524034e-10,
-      "global_moment_error_nm": 1.1932570487260818e-09
-    },
-    {
-      "system": "x",
-      "fixed_column_base_nodes": [
-        0,
-        2
-      ],
-      "blocked_dofs": [
-        "UX",
-        "UY",
-        "RZ"
-      ],
-      "base_constraint_error": 0.0,
-      "massless_dof_equilibrium_error": 3.4924596548080444e-10,
-      "base_shear_error_n": 1.6443664208054543e-09,
-      "global_moment_error_nm": 4.540197551250458e-09
-    },
-    {
-      "system": "chevron",
-      "fixed_column_base_nodes": [
-        0,
-        2
-      ],
-      "blocked_dofs": [
-        "UX",
-        "UY",
-        "RZ"
-      ],
-      "base_constraint_error": 0.0,
-      "massless_dof_equilibrium_error": 6.984919309616089e-10,
-      "base_shear_error_n": 1.4551915228366852e-10,
-      "global_moment_error_nm": 1.4006218407303095e-08
-    }
-  ],
+  "frames": [],
   "bridge_dynamic": {
     "speed_kmh": 72,
     "free_equilibrium_error_n": 5.668553058058023e-07,
@@ -363,8 +314,7 @@
     "twin/bridge_dynamics.py": "d6d0a63f13192a1cdc3fbf3746af571f64b854d1c7ab3cc17c73176829a84c5c",
     "twin/models.py": "444ec04c96be3fcf6373af8c2ca07f3f13e580e28dce4be4114bef2307cd74d0",
     "twin/dynamics.py": "9a5ad9311f140a380bb0a8fd48e82864041c0b271799d0b09762cd2dbdfb663c",
-    "twin/seismic.py": "5dba288bc678b18c8fb3eaea05e137a854c121b6a78bb97e7e695c7547c95810",
-    "twin/support_audit.py": "6f8bbed76ca29ed3aa762e3660f3872a7719bf2a12b201f731c1adfb0670baab"
+    "twin/support_audit.py": "53f32ef80d5901d5faecaa5a90dd724b8cd4414042c226b1c7c01529eb26273f"
   },
   "passed": true
 }

@@ -1,0 +1,21 @@
+name: Bug report
+description: Report a reproducible numerical or interface problem
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Expected and observed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps and input
+      description: Include geometry, supports, units and settings. Remove private measurements and credentials.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: OS, Python version and commit SHA

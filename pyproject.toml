@@ -5,9 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "structural-twin"
 version = "0.1.0"
-description = "Physics-aware structural digital twin research prototype"
+description = "Structural digital twin for trusses, bridges, sensing and damage estimation"
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24", "scipy>=1.10", "scikit-learn>=1.4"]
+
+[project.urls]
+Repository = "https://github.com/Valomaxed/stratum"
+Issues = "https://github.com/Valomaxed/stratum/issues"
 
 [tool.setuptools.packages.find]
 include = ["twin*"]

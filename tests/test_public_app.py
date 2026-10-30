@@ -42,28 +42,6 @@ class PublicAppTests(unittest.TestCase):
             for path in ('/twin/server.py','/data/load-study/multi.joblib','/Civil_Research_Targets_2026.xlsx','/../README.md','/.env'):
                 self.assertEqual(client.get(path).status_code,404)
 
-    def test_seismic_page_and_api(self):
-        with self.client() as client:
-            self.assertEqual(client.get('/seismic.html').status_code,200)
-            self.assertEqual(client.get('/records/el-centro-1940.at2').status_code,200)
-            record={'text':'ACCELERATION IN UNITS OF G\nNPTS= 3, DT= .02 SEC\n0 .1 0','unit':'g'}
-            response=client.post('/api/seismic',json={'record':record})
-            self.assertEqual(response.status_code,200)
-            self.assertEqual(len(response.json()['systems']),3)
-            self.assertEqual(client.post('/api/seismic',json={'record':{'text':'bad'}}).status_code,400)
-            self.assertEqual(client.post('/api/seismic',content=b'x'*2_000_001).status_code,413)
-
-    def test_saved_seismic_validation_endpoint_and_private_path_boundary(self):
-        from unittest.mock import patch
-        with self.client() as client:
-            with patch('twin.seismic_benchmark.saved_report',return_value={'available':True,'fresh':False,'current_pass':False}):
-                response=client.get('/api/seismic-validation')
-                self.assertEqual(response.status_code,200)
-                self.assertFalse(response.json()['current_pass'])
-                self.assertEqual(response.headers['cache-control'],'no-store')
-            for path in ('/api/seismic-validation/../../twin/seismic.py','/api/seismic-validation/histories.npz'):
-                self.assertEqual(client.get(path).status_code,404)
-
     def test_json_limits_invalid_numbers_and_backend_errors(self):
         with self.client() as client:
             self.assertEqual(client.post('/api/analyze',json={'damage':[]}).status_code,200)

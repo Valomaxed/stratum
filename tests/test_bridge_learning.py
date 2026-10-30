@@ -75,6 +75,8 @@ class BridgeLearningTests(unittest.TestCase):
         from twin.bridge_learning import DIRECTORY
         report_path=DIRECTORY/'report.json'
         if not report_path.exists():self.skipTest('Training artifact not present')
+        if not all((DIRECTORY/name).is_file() for name in ('dataset.npz', 'test-predictions.npz')):
+            self.skipTest('Regenerate the excluded bridge datasets to audit raw metrics')
         report=json.loads(report_path.read_text(encoding='utf8'))
         raw=np.load(DIRECTORY/'test-predictions.npz');labels=raw['label'];damage=labels>0
         for condition in report['experiments']:

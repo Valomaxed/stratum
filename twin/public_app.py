@@ -38,7 +38,7 @@ class PublicHeaders(BaseHTTPMiddleware):
 
 
 async def read_payload(request):
-    limit=2_000_000 if request.url.path == '/api/seismic' else MAX_BODY_BYTES
+    limit=MAX_BODY_BYTES
     length=request.headers.get("content-length")
     if length is not None:
         try:length=int(length)
@@ -96,11 +96,7 @@ def create_app(service_factory=TwinService,require_ready=True):
             if not gate.acquire(blocking=False):
                 return JSONResponse({"error":"Analysis server is busy. Please try again shortly."},status_code=429,headers={"Retry-After":"2"})
             try:
-                if request.url.path == '/api/seismic':
-                    from .seismic import compare
-                    result=compare(payload)
-                else:
-                    result=request.app.state.twin.analyze(payload)
+                result=request.app.state.twin.analyze(payload)
                 # JSONResponse refuses nonfinite output rather than leaking invalid JSON.
                 return JSONResponse(result)
             except (ValueError,TypeError,KeyError,IndexError,OverflowError,np.linalg.LinAlgError) as error:
@@ -121,18 +117,7 @@ def create_app(service_factory=TwinService,require_ready=True):
 
     async def home(request):return FileResponse(WEB/"index.html",media_type="text/html")
 
-    async def seismic_validation(request):
-        from .seismic_benchmark import saved_report
-        return JSONResponse(await run_in_threadpool(saved_report))
-
-    from .seismic_benchmark import REPORT_DIR as SEISMIC_REPORT_DIR
-
     routes=[Route("/api/health",health),Route("/api/analyze",analyze,methods=["POST"]),
-            Route('/api/seismic',analyze,methods=['POST']),
-            Route('/api/seismic-validation',seismic_validation),
-            Route('/api/seismic-validation/report.md',report(SEISMIC_REPORT_DIR/'report.md')),
-            Route('/api/seismic-validation/comparison.png',report(SEISMIC_REPORT_DIR/'opensees-comparison.png')),
-            Route('/api/seismic-validation/convergence.png',report(SEISMIC_REPORT_DIR/'time-step-convergence.png')),
             Route("/api/observations",external_disabled,methods=["GET","POST","PUT","DELETE"]),
             Route("/api/telemetry",external_disabled),
             Route("/api/metrics",report(DATA/"metrics.json")),Route("/api/study",report(STUDY/"report.json")),

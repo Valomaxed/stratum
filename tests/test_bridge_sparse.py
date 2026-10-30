@@ -70,6 +70,8 @@ class SparseBridgeTests(unittest.TestCase):
 
     def test_frozen_sparse_report_and_raw_metrics_are_recomputable(self):
         if not (DIRECTORY/'report.json').exists():self.skipTest('Sparse study is still generating or not present')
+        if not (DIRECTORY/'test-predictions.npz').is_file():
+            self.skipTest('Regenerate the excluded sparse predictions and forests to audit raw metrics')
         report=json.loads((DIRECTORY/'report.json').read_text(encoding='utf8'))
         selection=json.loads((DIRECTORY/'selection.json').read_text(encoding='utf8'))
         placement=json.loads((DIRECTORY/'placement.json').read_text(encoding='utf8'))
@@ -96,6 +98,8 @@ class SparseBridgeTests(unittest.TestCase):
         for options in ([],{'unrecognized':10}):
             with self.assertRaises(ValueError):service.playback({'model_id':'bridge','method':'dynamic-moving-force','bridge_ml':options})
         if not (DIRECTORY/'report.json').exists():self.skipTest('Sparse study is still generating or not present')
+        if not (DIRECTORY/'models/guided-10.joblib').is_file() or not (DIRECTORY.parent/'bridge-ml/forest.joblib').is_file():
+            self.skipTest('Regenerate the excluded bridge baseline and guided-10 forests to test trained inference')
         result=service.playback({'model_id':'bridge','method':'dynamic-moving-force','sensor_count':1,
                                  'bridge_ml':{'sensor_count':10,'placement':'guided'}})
         self.assertTrue(result['ml']['available']);self.assertEqual(result['ml']['sensor_count'],10)
