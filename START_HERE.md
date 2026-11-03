@@ -43,4 +43,4 @@ Training and test use the same FEM family. Healthy cases are noise replicates of
 
 Broader load/speed/damage families, sparse dropout/drift, uncertainty calibration and physical measurements require new datasets and validation. These are proposed extensions.
 
-[Authorship](AUTHORS.md) · [Private access](docs/REVIEWER_ACCESS.md) · [Architecture](docs/ARCHITECTURE.md)
+[Authorship](AUTHORS.md) · [Review information](docs/REVIEWER_ACCESS.md) · [Architecture](docs/ARCHITECTURE.md)

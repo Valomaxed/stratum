@@ -11,3 +11,11 @@ Start with a focused issue describing the problem, expected behavior, and a repr
 Numerical changes need meaningful equilibrium, analytical, convergence, or independent-solver checks. Preserve train/validation/test boundaries and report abstentions and failed cases. Do not retune a method against held-out results. Generated models, environments, sensor recordings, credentials, and caches do not belong in commits.
 
 A saved verification report is evidence for its recorded source hashes and configuration. Regenerate it after changing its numerical sources; do not edit a PASS flag manually. Screenshots and simulated examples do not establish physical validation or design-code compliance.
+
+## Commit messages
+
+Use a concise, imperative subject that describes the technical change, such as
+`docs: clarify installation and add application screenshots`. Add a body only
+when the rationale or validation needs explanation. Do not copy task requests,
+prompts, conversation transcripts, personal remarks, or tool output into commit
+messages. Preserve author attribution and relevant co-author trailers.

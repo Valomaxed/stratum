@@ -1,39 +1,30 @@
 # STRATUM
 
-**FEM-based damage estimation and sparse sensing in truss bridges**
+Finite-element analysis, damage estimation, and sparse sensing for truss bridges.
 
-**Author: [Atharv Sharma](AUTHORS.md)** · Research software portfolio
+STRATUM models planar and space trusses, simulates a moving load on a 24 m bridge, and estimates member stiffness loss from virtual strain and displacement measurements. A browser workspace provides model inspection, load playback, response plots, and exports.
+
+**Author:** [Atharv Sharma](AUTHORS.md) · [Results](docs/RESULTS.md) · [Reproduction guide](docs/REPRODUCIBILITY.md) · [Source guide](START_HERE.md)
 
 [![Tests](https://github.com/Valomaxed/stratum/actions/workflows/tests.yml/badge.svg)](https://github.com/Valomaxed/stratum/actions/workflows/tests.yml)
 
-**Academic review:** [Start here](START_HERE.md) · [Results](docs/RESULTS.md) · [Reproduce](docs/REPRODUCIBILITY.md) · [Architecture](docs/ARCHITECTURE.md)
+## Application
 
-Private repository: arrange access before sharing the CV link. [Reviewer access](docs/REVIEWER_ACCESS.md).
+![Bridge response and member inspection](data/ui-monochrome-preview.jpg)
 
-## Research question
+Bridge geometry, support restraints, calculated member response, and moving-load controls. Configured damage is a simulation input; the separate ML workflow estimates damage from measured response channels.
 
-How much damage-location and stiffness-loss information can be recovered from fewer structural-response channels in a simulated truss bridge?
+## Methods
 
-STRATUM connects an implemented axial-truss FEM solver, prescribed moving-force dynamics, virtual strain/displacement sensing, random-forest estimators and an interactive 3D browser viewer. The study examines sensor-budget/accuracy trade-offs under a declared synthetic acquisition protocol.
+- **Mechanics:** 2D/3D axial-truss FEM, support elimination, reaction recovery, modal analysis, and prescribed moving-force dynamics.
+- **Estimation:** Random Forest classification and regression for bridge damage; separate physics-based inverse methods for the planar study.
+- **Sensing:** Channel selection and paired comparisons across sensor budgets, using selected channel histories as model inputs.
 
-## Implemented work
+## Recorded bridge results
 
-| Component | Implementation and review evidence |
-|---|---|
-| Structural mechanics | [2D/3D axial FEM](twin/fem.py), [bridge supports and axle transfer](twin/bridge.py), response and modal recovery |
-| Dynamic acquisition | [Moving-force response](twin/bridge_dynamics.py), damping and complete-crossing channel histories |
-| Damage estimation | [Scoped bridge RF pipeline](twin/bridge_learning.py); separate planar RF/physics inverse methods |
-| Sparse experiment | [Selected-only features and paired placement study](twin/bridge_sparse.py) across five budgets |
-| Interface | [Browser workspace](web/) with member inspection, load/deformation playback and exports; optional [Unity static viewer](unity/README.md) |
-| Verification | [Analytical, balance, independent ODE and convergence checks](tests/); [support audit](data/support-review.md) |
+The baseline contains 3,520 synthetic cases, split before noise augmentation into 2,464 training, 528 validation, and 528 test cases. The table uses the same 528 held-out cases and noise draws at 0.5% sensor noise.
 
-NumPy/SciPy provide linear algebra and scikit-learn provides the random forests. Structural assembly, load transfer, acquisition/evaluation and visualization are implemented around those libraries. [Suggested source review route](START_HERE.md).
-
-## Main finding: a sensor-budget trade-off
-
-Saved results on the same **528 held-out synthetic cases** at **0.5% sensor noise**:
-
-| Channels | Guided location accuracy | Fixed random accuracy | Guided damaged severity MAE (pp) |
+| Channels | Guided location accuracy | Fixed-random accuracy | Guided severity MAE (percentage points) |
 |---|---:|---:|---:|
 | 131 | 92.61% | 92.61% | 5.18 |
 | 50 | 88.26% | 88.07% | 6.34 |
@@ -41,92 +32,64 @@ Saved results on the same **528 held-out synthetic cases** at **0.5% sensor nois
 | 10 | 59.28% | 59.09% | 16.59 |
 | 5 | 45.08% | 39.77% | 21.41 |
 
-![Sparse-sensor results](data/bridge-sparse/review-summary.png)
+Fifty guided channels reduce the channel count by 61.8%, with lower accuracy than the full array. Only the 131-channel layout met the predefined validation qualification rule. Guided placement does not outperform the fixed-random comparator at every budget. Abstentions count as errors.
 
-Fifty guided channels reduce channel count by **61.8%**, giving **88.26%** location accuracy versus **92.61%** for the full array. Only 131 guided channels met the predefined validation qualification rule. Guided placement did not outperform the single fixed random comparator at every budget.
+![Accuracy and sensor-budget comparison](data/bridge-sparse/review-summary.png)
 
-Abstentions count as errors. End-to-end severity MAE includes missed/wrong locations; `pp` denotes percentage points of stiffness loss. Coverage, healthy alarms and complete definitions are in [Results](docs/RESULTS.md).
+Definitions, acquisition conditions, coverage, healthy alarms, and raw report links are in [Results](docs/RESULTS.md).
 
-The study uses the same FEM family for training and test, healthy/single-member bridge damage and fixed crossing conditions. Healthy cases are noise replicates of one structural state. These results do not establish physical transfer.
+## Run locally
 
-## Fast review without training
+Use Python 3.12 or 3.13.
 
-After installing requirements.txt, run from the repository root:
-
-```bash
-python examples/quick_review.py
-```
-
-This compares healthy and configured-damaged static bridge responses and prints engineering values and equilibrium residuals. [Recorded output](data/review-example.json). No trained model or server is required for this example. [Reproduction levels](docs/REPRODUCIBILITY.md).
-
-## Quick start
-
-Python 3.12 or 3.13 is recommended for the documented development workflow. Run from a source checkout; the web assets and research artifacts live alongside the Python package.
-
-```bash
+```sh
 git clone https://github.com/Valomaxed/stratum.git
 cd stratum
 python -m venv .venv
 ```
 
-**Windows PowerShell**
+Windows PowerShell:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe examples/quick_review.py
 .\.venv\Scripts\python.exe -m twin serve --host 127.0.0.1 --port 8766
 ```
 
-**macOS / Linux**
+macOS/Linux:
 
-```bash
+```sh
 .venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python examples/quick_review.py
 .venv/bin/python -m twin serve --host 127.0.0.1 --port 8766
 ```
 
-Open **http://127.0.0.1:8766/**. Select a structure, set loading and configured damage, then run the analysis. Use **Play crossing** for dynamics or **Use M05 · 40% loss** for a healthy/damaged comparison. [Unity setup](unity/README.md).
+Open [localhost:8766](http://127.0.0.1:8766/). The numerical example and FEM viewer run without trained ML artifacts. The ML panels report unavailable models until the training workflow in the [reproduction guide](docs/REPRODUCIBILITY.md) has been run.
 
-## Machine-learning artifacts
+## Verification
 
-The repository includes source, tests, reports and previews. Trained forests and generated datasets are excluded. **FEM and visualization run without them; ML panels explicitly report unavailable until training is complete.**
-
-```powershell
-.\.venv\Scripts\python.exe -m twin train
-.\.venv\Scripts\python.exe -m twin study
-.\.venv\Scripts\python.exe -m twin robust-study
-.\.venv\Scripts\python.exe -m twin bridge-train --workers 2
-.\.venv\Scripts\python.exe -m twin bridge-sparse-study --workers 2
-```
-
-Sparse bridge training depends on the preceding bridge baseline. Training jobs can take several minutes or longer. [Experiment protocols, metrics and regeneration details](docs/RESEARCH.md).
-
-## Validation
-
-```powershell
-.\.venv\Scripts\python.exe -m unittest tests.test_fem tests.test_space tests.test_bridge tests.test_bridge_dynamics tests.test_playback tests.test_pipeline tests.test_load_cases tests.test_robust tests.test_bridge_learning tests.test_bridge_sparse tests.test_support_audit -v
+```sh
+python -m unittest tests.test_fem tests.test_space tests.test_bridge tests.test_bridge_dynamics -v
 node --test tests/bridge-playback.test.cjs
-.\.venv\Scripts\python.exe -m twin.support_audit
 ```
 
-Tests cover analytical bars/tripods, support stability, force/moment and energy balance, modal equations, axle transfer, independent ODE comparisons, time-step convergence and inference contracts. Artifact-dependent tests skip explicitly when their local training files are absent. The optional legacy public-server adapter uses separate dependencies and tests; CI focuses on the local research application. No hosting or deployment is enabled by this repository setup.
+The [complete CI workflow](.github/workflows/tests.yml) adds service, estimation, support-audit, and playback checks. Verification covers analytical solutions, force/moment and energy balance, modal equations, independent ODE calculations, and time-step refinement. Artifact-dependent tests explicitly skip when their training files are absent.
 
-## Repository map
+## Scope
+
+The bridge uses linear, small-displacement axial members and prescribed moving forces. It excludes local deck bending, vehicle suspension, contact/uplift, nonlinear buckling, and capacity/code assessment. ML results describe the documented synthetic acquisition family; physical transfer and multi-member bridge damage require further evaluation. The stiffness index is not a safety rating.
+
+## Code and documentation
 
 | Path | Contents |
 |---|---|
-| `twin/` | FEM, bridge dynamics, sensing, estimators and HTTP API |
-| `web/` | Browser workspace, plots and projected 3D model |
-| `tests/` | Numerical, API/service and playback regression checks |
-| `unity/` | Optional Unity project and static viewer |
-| `hardware/` | Calibrated packet forwarding example |
-| `data/` | Versioned reports/previews; generated large binaries ignored |
-| `docs/` | Architecture, research protocol and repository migration |
+| `twin/` | FEM, dynamics, sensing, estimation, and HTTP API |
+| `web/` | Browser model, plots, inspection, and playback |
+| `tests/` | Numerical, service, and regression checks |
+| `examples/` | Small numerical examples and report plotting |
+| `data/` | Versioned results, verification reports, and screenshots |
+| `unity/` | Optional Unity viewer |
 
-## Research scope
+[Architecture](docs/ARCHITECTURE.md) · [Research protocol](docs/RESEARCH.md) · [Support audit](data/support-review.md) · [Contributing](CONTRIBUTING.md) · [Citation](CITATION.cff)
 
-The bridge is a linear, small-displacement axial-truss model. Deck mass/load transfer is included; local deck bending, contact/uplift, vehicle suspension/moving mass, nonlinear buckling, capacity and code checks are excluded. The displayed stiffness index is **not a structural safety rating**.
-
-Bridge ML is validated on synthetic healthy/single-member loss cases within its declared default crossing and noise domain. Sparse dropout/drift, multi-member bridge damage and physical transfer are not established. Forest votes are uncalibrated. Only the full 131-channel guided layout met the study's predefined 90% validation target; fewer sensors trade accuracy for coverage. See [research notes](docs/RESEARCH.md) for the complete numerical results.
-
-## Documentation and contributions
-
-[Academic review](START_HERE.md) · [Results](docs/RESULTS.md) · [Reproduce](docs/REPRODUCIBILITY.md) · [Authorship](AUTHORS.md) · [Citation](CITATION.cff) · [Architecture](docs/ARCHITECTURE.md) · [Research](docs/RESEARCH.md) · [Support audit](data/support-review.md) · [Changelog](CHANGELOG.md) · [Contributing](CONTRIBUTING.md) · [Issues](https://github.com/Valomaxed/stratum/issues)
+The independent frame-analysis project is [STRATUM Seismic](https://github.com/Valomaxed/stratum-seismic).
